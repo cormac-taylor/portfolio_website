@@ -1,12 +1,19 @@
 h1,
-h2,
+h2 {
+    margin: 10px auto;
+    color: black;
+}
 p {
+    margin: 10px 10px;
     color: black;
 }
 body {
     width: 600px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 0 20px 20px 20px;
     border: 5px solid black;
-  }
-  
+}
+#header {
+    margin: 10px auto;
+    text-align: center;
+}
