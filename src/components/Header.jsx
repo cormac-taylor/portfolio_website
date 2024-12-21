@@ -6,7 +6,7 @@ function Header() {
       <nav>
         {/* add logo for nav */}
         <a href="/">
-          <img src="" alt="" />
+          <img src="/no_logo.jpeg" alt="No logo." />
         </a>
         <a href="/about">About</a>
         <a href="/blog">Blog</a>
