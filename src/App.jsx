@@ -1,5 +1,7 @@
-import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./global.css";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -7,24 +9,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
-  );
-}
-
-function Home() {
-  return (
-    <>
-      <h1>Home</h1>
-    </>
-  );
-}
-
-function About() {
-  return (
-    <>
-      <h1>About</h1>
-    </>
   );
 }
 
