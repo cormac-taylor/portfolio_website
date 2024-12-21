@@ -14,7 +14,7 @@ function Footer() {
 function GitHubRef() {
   return (
     <div>
-      <p>GitHubRef</p>
+      <p>Check out the source code on <a href="https://github.com/cormac-taylor/personal_website">github</a>.</p>
     </div>
   );
 }
@@ -33,7 +33,7 @@ function Contacts() {
           <img src="/youtube.png" alt="YouTube Logo" />
         </a>
       </div>
-      <p>GitHubRef</p>
+      <p>Contacts</p>
     </div>
   );
 }
