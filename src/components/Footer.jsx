@@ -3,7 +3,7 @@ import "./styles/Footer.css";
 function Footer() {
   return (
     <>
-      <footer>
+      <footer className="footer_container">
         <GitHubRef />
         <Contacts />
       </footer>
@@ -13,7 +13,7 @@ function Footer() {
 
 function GitHubRef() {
   return (
-    <div>
+    <div className="footer_box">
       <p>Check out the source code on <a href="https://github.com/cormac-taylor/personal_website">github</a>.</p>
     </div>
   );
@@ -21,7 +21,7 @@ function GitHubRef() {
 
 function Contacts() {
   return (
-    <div>
+    <div className="footer_box">
       <div>
         <a href="https://github.com/cormac-taylor" target="_blank">
           <img src="/linked_in.png" alt="GitHub Logo" />
@@ -33,7 +33,7 @@ function Contacts() {
           <img src="/youtube.png" alt="YouTube Logo" />
         </a>
       </div>
-      <p>Contacts</p>
+      <p>© 2024, cormac-taylor.com</p>
     </div>
   );
 }
