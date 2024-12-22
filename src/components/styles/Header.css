@@ -14,11 +14,13 @@
 
 .nav_box {
   flex: 1;
+  gap: 5px;
 }
 
 .nav_link {
   color: #efefef;
   padding: 0.5em 1em;
+  /* transition: all 0.25s ease; */
 }
 
 .nav_link:hover {
@@ -32,10 +34,15 @@
 .new_tab_icon {
   vertical-align: middle;
   padding-left: 0.5em;
-  max-width: 1em;
-  
+  max-width: 0.8em;
 }
 
 .nav_img {
   max-height: 3em;
+  transition: transform 0.25s ease;
+}
+
+.nav_img:hover {
+  transform: scale(1.1);
+  
 }

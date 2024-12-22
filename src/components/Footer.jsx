@@ -1,4 +1,5 @@
 import "./styles/Footer.css";
+import PropTypes from "prop-types";
 
 function Footer() {
   return (
@@ -26,30 +27,40 @@ function Contacts() {
   return (
     <div className="footer_box right">
       <div className="img_links_container">
-        <a
-          href="https://www.linkedin.com/in/cormac-taylor/"
-          target="_blank"
-          className="img_links_box"
-        >
-          <img src="/linked_in_logo.png" alt="GitHub Logo" />
-        </a>
-        <a
-          href="https://github.com/cormac-taylor"
-          target="_blank"
-          className="img_links_box"
-        >
-          <img src="/github_logo.png" alt="LinkedIn Logo" />
-        </a>
-        <a
-          href="https://www.youtube.com/@cormac-taylor"
-          target="_blank"
-          className="img_links_box"
-        >
-          <img src="/youtube_logo.png" alt="YouTube Logo" />
-        </a>
+        <SocialsExternalLink
+          url="https://www.linkedin.com/in/cormac-taylor/"
+          src="/linked_in_logo.png"
+          alt="LinkedIn Logo"
+        />
+        <SocialsExternalLink
+          url="https://github.com/cormac-taylor"
+          src="/github_logo.png"
+          alt="GitHub Logo"
+        />
+        <SocialsExternalLink
+          url="https://www.youtube.com/@cormac-taylor"
+          src="/youtube_logo.png"
+          alt="YouTube Logo"
+        />
       </div>
       <p>© 2024, cormac-taylor.com</p>
     </div>
+  );
+}
+
+SocialsExternalLink.propTypes = {
+  url: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+};
+
+function SocialsExternalLink({ url, src, alt }) {
+  return (
+    <>
+      <a href={url} target="_blank" className="img_links_box">
+        <img src={src} alt={alt} />
+      </a>
+    </>
   );
 }
 

@@ -1,4 +1,5 @@
 import "./styles/Header.css";
+import PropTypes from "prop-types";
 
 const EMAIL = "cormacmtaylor@gmail.com";
 
@@ -8,24 +9,44 @@ function Header() {
       <nav className="nav_container">
         <div className="nav_box left">
           <a href="/">
-            <img src="no_logo.jpeg" alt="No Logo" className="nav_img" />
-          </a>
-        </div>
-        <div className="nav_box right">
-          <a
-            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`}
-            target="_blank"
-            className="nav_link center"
-          >
-            Contact
             <img
-              src="/new_tab.png"
-              alt="New window icon by Grand Iconic - Flaticon"
-              className="new_tab_icon"
+              src="cormac_taylor_logo.svg"
+              alt="CT Logo"
+              className="nav_img"
             />
           </a>
         </div>
+        <div className="nav_box right">
+          <NavExternalLink
+            url="https://www.cormac-taylor.com/Cormac_Taylor_Resume.pdf"
+            txt="Resume"
+          />
+          <NavExternalLink
+            url={`https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`}
+            txt="Contact"
+          />
+        </div>
       </nav>
+    </>
+  );
+}
+
+NavExternalLink.propTypes = {
+  url: PropTypes.string.isRequired,
+  txt: PropTypes.string.isRequired,
+};
+
+function NavExternalLink({ url, txt }) {
+  return (
+    <>
+      <a href={url} target="_blank" className="nav_link center">
+        {txt}
+        <img
+          src="/new_tab.svg"
+          alt="New window icon by Grand Iconic - Flaticon"
+          className="new_tab_icon"
+        />
+      </a>
     </>
   );
 }

@@ -14,4 +14,9 @@
 
 .img_links_box img {
   max-height: 25px;
+  transition: transform 0.25s ease;
+}
+
+.img_links_box img:hover {
+  transform: scale(1.2);
 }
