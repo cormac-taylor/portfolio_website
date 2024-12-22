@@ -25,7 +25,6 @@
 
 .nav_link:hover {
   color: #101010;
-  border: 1px solid #efefef;
   background-color: #efefef;
   border-radius: 0.5em;
   text-decoration: none;
@@ -44,5 +43,4 @@
 
 .nav_img:hover {
   transform: scale(1.1);
-  
 }
