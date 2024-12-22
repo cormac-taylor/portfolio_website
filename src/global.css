@@ -16,17 +16,20 @@ a:hover {
 }
 
 .page {
-  margin-top: 4em;
+  margin-top: 5em;
 }
 
 .left {
   text-align: left;
+  justify-content: left;
 }
 
 .center {
   text-align: center;
+  justify-content: center;
 }
 
 .right {
   text-align: right;
+  justify-content: right;
 }
