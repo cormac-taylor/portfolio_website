@@ -1,19 +1,17 @@
 /* Header.css */
 .nav_container {
   position: fixed;
-
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
-
-  width: 10%;
-  top: 2em;
-  left: 45%;
+  justify-content: center;
+  align-items: center;
+  height: 5em;
 }
 
 .nav_link {
+  padding: 14px 20px;
+  text-align: center;
   color: #efefef;
-}
-
-a + a {
-  padding: 0px 1em;
 }
