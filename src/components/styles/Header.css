@@ -20,13 +20,13 @@
 .nav_link {
   color: #efefef;
   padding: 0.5em 1em;
-  /* transition: all 0.25s ease; */
+  border-radius: 0.5em;
+  transition: background-color 0.25s ease;
 }
 
 .nav_link:hover {
   color: #101010;
   background-color: #efefef;
-  border-radius: 0.5em;
   text-decoration: none;
 }
 
