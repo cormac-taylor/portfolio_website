@@ -1,6 +1,8 @@
 /* Footer.css */
 .footer_container {
   display: flex;
+  margin-left: calc(100vw / 6);
+  margin-right: calc(100vw / 6);
 }
 
 .footer_box {

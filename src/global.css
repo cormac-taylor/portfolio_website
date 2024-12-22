@@ -2,8 +2,7 @@
 body {
   background-color: #101010;
   color: #efefef;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin: 0px;
 }
 
 a {
@@ -13,10 +12,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-.page {
-  margin-top: 5em;
 }
 
 .left {
