@@ -3,7 +3,10 @@ import "./styles/About.css";
 function About() {
   return (
     <>
-      <h1>About</h1>
+      <main className="page">
+        <h1>About</h1>
+        <p>To be completed...</p>
+      </main>
     </>
   );
 }

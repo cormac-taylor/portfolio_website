@@ -3,7 +3,10 @@ import "./styles/Blog.css";
 function Blog() {
   return (
     <>
-      <h1>Blog</h1>
+      <main className="page">
+        <h1>Blog</h1>
+        <p>To be completed...</p>
+      </main>
     </>
   );
 }

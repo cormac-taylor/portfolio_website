@@ -1,16 +1,17 @@
 /* Footer.css */
-img {
-  max-height: 25px;
-}
-
 .footer_container {
   display: flex;
-  gap: 10px; /* Optional: space between the boxes */
 }
 
 .footer_box {
-  flex: 1; /* Optional: makes each box take equal width */
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center; /* Centers content horizontally */
+  flex: 1;
+  margin-top: auto;
+}
+
+.img_links_container a {
+  padding: 1ch;
+}
+
+.img_links_box img {
+  max-height: 25px;
 }

@@ -3,14 +3,19 @@ import "./styles/Header.css";
 function Header() {
   return (
     <>
-      <nav>
-        {/* add logo for nav */}
-        <a href="/">
-          <img src="/no_logo.jpeg" alt="No logo." />
-        </a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
-      </nav>
+      <div className="center">
+        <nav className="nav_container">
+          <a href="/" className="nav_link">
+            Home
+          </a>
+          <a href="/about" className="nav_link">
+            About
+          </a>
+          <a href="/blog" className="nav_link">
+            Blog
+          </a>
+        </nav>
+      </div>
     </>
   );
 }

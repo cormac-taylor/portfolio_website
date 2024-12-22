@@ -1,4 +1,19 @@
 /* Header.css */
-nav img {
-  max-height: 50px;
+.nav_container {
+  position: fixed;
+
+  display: flex;
+  justify-content: space-evenly;
+
+  width: 10%;
+  top: 2em;
+  left: 45%;
+}
+
+.nav_link {
+  color: #efefef;
+}
+
+a + a {
+  padding: 0px 1em;
 }
