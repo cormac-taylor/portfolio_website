@@ -26,11 +26,11 @@ function Header() {
         <div className="nav_box right">
           <NavExternalLink
             url="https://www.cormac-taylor.com/Cormac_Taylor_Resume.pdf"
-            txt="Resume"
+            txt="resume"
           />
           <NavExternalLink
             url={`https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`}
-            txt="Contact"
+            txt="contact"
           />
         </div>
       </nav>

@@ -43,8 +43,9 @@ function Home({ startTyping, setStartTyping }) {
       <div className="full_screen_divider"></div>
       <section className="full_screen_section section"></section>
       <div className="full_screen_divider"></div>
+      <section className="full_screen_section section"></section>
       <section className="section">
-        <h2>Projects</h2>
+        <h2>projects</h2>
       </section>
     </>
   );
