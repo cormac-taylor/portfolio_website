@@ -1,5 +1,7 @@
 /* global.css */
 body {
+  font-family: "Menlo", "Ubuntu Mono", "DejaVu Sans Mono", "Consolas",
+    "Courier New", monospace; /* macOS, Ubuntu, Unix, Windows, ... */
   background-color: #101010;
   color: #efefef;
   margin: 0px;

@@ -1,9 +1,11 @@
 /* Home.css */
+.section {
+    margin-left: calc(100vw / 6);
+    margin-right: calc(100vw / 6);  
+}
 .full_screen_section {
   width: 70vw;
   height: 100vh;
-  margin-left: calc(100vw / 6);
-  margin-right: calc(100vw / 6);
 }
 
 .full_screen_divider {
@@ -21,10 +23,11 @@
 }
 
 #landing_title {
-    font-size: 128px;
+    font-size: 112px;
     margin: 0px;
 }
 
 #landing_description {
+    font-size: 32px;
     color: #bfbfbf
 }

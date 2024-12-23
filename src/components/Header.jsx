@@ -10,7 +10,7 @@ function Header() {
         <div className="nav_box left">
           <a href="/">
             <img
-              src="cormac_taylor_logo.svg"
+              src="/images/cormac_taylor_logo.svg"
               alt="CT Logo"
               className="nav_img"
             />
@@ -42,7 +42,7 @@ function NavExternalLink({ url, txt }) {
       <a href={url} target="_blank" className="nav_link center">
         {txt}
         <img
-          src="/new_tab.svg"
+          src="/images/new_tab.svg"
           alt="New window icon by Grand Iconic - Flaticon"
           className="new_tab_icon"
         />

@@ -29,17 +29,17 @@ function Contacts() {
       <div className="img_links_container">
         <SocialsExternalLink
           url="https://www.linkedin.com/in/cormac-taylor/"
-          src="/linked_in_logo.png"
+          src="/images/linked_in_logo.png"
           alt="LinkedIn Logo"
         />
         <SocialsExternalLink
           url="https://github.com/cormac-taylor"
-          src="/github_logo.png"
+          src="/images/github_logo.png"
           alt="GitHub Logo"
         />
         <SocialsExternalLink
           url="https://www.youtube.com/@cormac-taylor"
-          src="/youtube_logo.png"
+          src="/images/youtube_logo.png"
           alt="YouTube Logo"
         />
       </div>
