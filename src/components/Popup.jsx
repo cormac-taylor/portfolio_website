@@ -2,7 +2,7 @@ import "./styles/Popup.css";
 import PropTypes from "prop-types";
 
 Popup.propTypes = {
-  onClose: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 function Popup({ onClose }) {

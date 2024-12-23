@@ -14,8 +14,9 @@
 
 /* Popup Content */
 .popup_content {
-  background-color: #efefef;
-  color: #101010;
+  background-color: #101010;
+  color: #efefef;
+  border: 1px solid #efefef;
   padding: 20px;
   border-radius: 10px;
   max-width: 400px;
@@ -28,13 +29,13 @@
     "Courier New", monospace; /* macOS, Ubuntu, Unix, Windows, ... */
   font-size: 16px;
   padding: 0.5em 1em;
-  background-color: #101010;
-  color: #efefef;
+  background-color: #efefef;
+  color: #101010;
   border-radius: 0.5em;
-  border-color: #101010;
+  border-color: #efefef;
 }
 
 .popup_content button:hover {
-  background-color: #efefef;
+  background-color: #bfbfbf;
   color: #101010;
 }

@@ -1,9 +1,10 @@
 import "./global.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import Popup from "./components/Popup.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
-import Popup from "./components/Popup.jsx";
+
 import Home from "./pages/Home.jsx";
 
 function App() {
@@ -11,11 +12,14 @@ function App() {
   const [startTyping, setStartTyping] = useState(false);
 
   useEffect(() => {
-    const hasSeenPopup = sessionStorage.getItem("hasSeenPopup");
-    if (!hasSeenPopup) {
-      setShowPopup(true);
-      sessionStorage.setItem("hasSeenPopup", "true");
-    }
+    // const hasSeenPopup = sessionStorage.getItem("hasSeenPopup");
+    // if (!hasSeenPopup) {
+    //   setShowPopup(true);
+    //   sessionStorage.setItem("hasSeenPopup", "true");
+    // }
+    setShowPopup(true);
+    document.body.style.overflow = "hidden";
+    setStartTyping(false);
   }, []);
 
   return (
@@ -24,12 +28,13 @@ function App() {
         <Popup
           onClose={() => {
             setShowPopup(false);
+            document.body.style.overflow = "";
             setStartTyping(true);
           }}
         />
       )}
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route
             path="/"
@@ -39,8 +44,8 @@ function App() {
           />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </>
   );
 }

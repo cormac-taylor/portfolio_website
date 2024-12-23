@@ -5,26 +5,30 @@ import { getRandomInt, playRandomKeystroke } from "../utilities/index.js";
 TypingEffect.propTypes = {
   text: PropTypes.string.isRequired,
   startTyping: PropTypes.bool.isRequired,
-  setStartTyping: PropTypes.func.isRequired,
+  resetTypingEffect: PropTypes.bool.isRequired,
+  setResetTypingEffect: PropTypes.func.isRequired,
   minTypingSpeed: PropTypes.number,
   maxTypingSpeed: PropTypes.number,
 };
-
-function TypingEffect({ text, startTyping, setStartTyping, minTypingSpeed = 300, maxTypingSpeed = 400 }) {
+function TypingEffect({
+  text,
+  startTyping,
+  resetTypingEffect,
+  setResetTypingEffect,
+  minTypingSpeed = 300,
+  maxTypingSpeed = 400,
+}) {
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
   const [className, setClassName] = useState("");
 
   useEffect(() => {
-    const handleBodyClick = () => {
-      setStartTyping(true);
-    };
-    document.addEventListener("click", handleBodyClick);
-    return () => document.removeEventListener("click", handleBodyClick);
-  }, [setStartTyping]);
-
-  useEffect(() => {
-    if (startTyping && index < text.length) {
+    if (resetTypingEffect) {
+      setDisplayedText("");
+      setIndex(0);
+      setClassName("");
+      setResetTypingEffect(false);
+    } else if (startTyping && index < text.length) {
       setClassName(() => "");
       const timer = setTimeout(() => {
         playRandomKeystroke();
@@ -35,7 +39,16 @@ function TypingEffect({ text, startTyping, setStartTyping, minTypingSpeed = 300,
     } else {
       setClassName(() => "animate_caret");
     }
-  }, [text, minTypingSpeed, maxTypingSpeed, index, className, startTyping]);
+  }, [
+    text,
+    startTyping,
+    resetTypingEffect,
+    setResetTypingEffect,
+    minTypingSpeed,
+    maxTypingSpeed,
+    index,
+    className
+  ]);
 
   return (
     <>

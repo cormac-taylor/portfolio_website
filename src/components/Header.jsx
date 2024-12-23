@@ -1,20 +1,27 @@
+import { useNavigate } from "react-router-dom";
 import "./styles/Header.css";
 import PropTypes from "prop-types";
 
 const EMAIL = "cormacmtaylor@gmail.com";
 
 function Header() {
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate("/", { state: { redirected: true } });
+  };
+
   return (
     <>
       <nav className="nav_container">
         <div className="nav_box left">
-          <a href="/">
+          <div onClick={handleNavigation}>
             <img
               src="/images/cormac_taylor_logo.svg"
               alt="CT Logo"
               className="nav_img"
             />
-          </a>
+          </div>
         </div>
         <div className="nav_box right">
           <NavExternalLink

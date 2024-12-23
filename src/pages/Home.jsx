@@ -1,6 +1,8 @@
 import "./styles/Home.css";
-import TypingEffect from "../components/TypingEffect.jsx";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
+import TypingEffect from "../components/TypingEffect.jsx";
 
 const NAME = "Cormac Taylor";
 
@@ -10,6 +12,19 @@ Home.propTypes = {
 };
 
 function Home({ startTyping, setStartTyping }) {
+  const [resetTypingEffect, setResetTypingEffect] = useState(false);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const state = location.state || {};
+    if (state.redirected) {
+      window.scrollTo(0, 0);
+      setResetTypingEffect(true);
+      setStartTyping(true);
+    }
+  }, [setStartTyping, location]);
+
   return (
     <>
       <section className="full_screen_section section">
@@ -18,7 +33,8 @@ function Home({ startTyping, setStartTyping }) {
             <TypingEffect
               text={NAME}
               startTyping={startTyping}
-              setStartTyping={setStartTyping}
+              resetTypingEffect={resetTypingEffect}
+              setResetTypingEffect={setResetTypingEffect}
             />
             <p id="landing_description">a highly curious problem solver.</p>
           </div>
