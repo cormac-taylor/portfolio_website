@@ -10,8 +10,9 @@
 
 .full_screen_divider {
   width: 100vw;
-  height: 0.04px;
-  background-color: #efefef;
+  /* height: 0.1px; */
+  /* background-color: #efefef; */
+  border-bottom: 1px solid #efefef;
 }
 
 #landing_container {
