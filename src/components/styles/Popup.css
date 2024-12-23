@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 /* Popup Content */
@@ -25,4 +26,15 @@
   margin-top: 10px;
   font-family: "Menlo", "Ubuntu Mono", "DejaVu Sans Mono", "Consolas",
     "Courier New", monospace; /* macOS, Ubuntu, Unix, Windows, ... */
+  font-size: 16px;
+  padding: 0.5em 1em;
+  background-color: #101010;
+  color: #efefef;
+  border-radius: 0.5em;
+  border-color: #101010;
+}
+
+.popup_content button:hover {
+  background-color: #efefef;
+  color: #101010;
 }
