@@ -47,7 +47,7 @@ function TypingEffect({
     minTypingSpeed,
     maxTypingSpeed,
     index,
-    className
+    className,
   ]);
 
   return (

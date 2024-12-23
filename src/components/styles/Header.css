@@ -1,21 +1,21 @@
 /* Header.css */
 .nav_container {
   position: fixed;
-  display: flex;
-
   top: 0;
-  left: calc(100vw / 6);
-  right: calc(100vw / 6);
+  left: 0;
+  right: 0;
   height: 5em;
-
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  margin-left: calc(100vw / 6);
+  margin-right: calc(100vw / 6);
   z-index: 900;
 }
 
 .nav_box {
   flex: 1;
-  gap: 5px;
+width: 50%;  
 }
 
 .nav_link {

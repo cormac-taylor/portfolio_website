@@ -27,7 +27,6 @@
   padding-right: 0.1em;
   width: fit-content;
   white-space: pre;
-  
 }
 
 #landing_description {
@@ -55,4 +54,21 @@
   50% {
     border-color: transparent;
   }
+}
+
+.about_container {
+  display: flex;
+  margin-left: calc(100vw / 6);
+  margin-right: calc(100vw / 6);
+  margin: 0px;
+  padding: 0px;
+}
+
+.about_box {
+  flex: 1;
+  height: 100vh;
+}
+
+.about_box img {
+  min-height: 100%;
 }

@@ -41,7 +41,19 @@ function Home({ startTyping, setStartTyping }) {
         </div>
       </section>
       <div className="full_screen_divider"></div>
-      <section className="full_screen_section section"></section>
+      <section className="full_screen_section section">
+        <div className="about_container">
+          <div className="about_box left">
+            <img
+              src="/images/portrait_b&w.png"
+              alt="Portrait of Cormac Taylor"
+            />
+          </div>
+          <div className="about_box right">
+            <h1>About</h1>
+          </div>
+        </div>
+      </section>
       <div className="full_screen_divider"></div>
       <section className="full_screen_section section"></section>
       <section className="section">
