@@ -17,7 +17,7 @@ function Header() {
         <div className="nav_box left">
           <div onClick={handleNavigation}>
             <img
-              src="/images/cormac_taylor_logo.svg"
+              src="/images/ct_logo.svg"
               alt="CT Logo"
               className="nav_img"
             />

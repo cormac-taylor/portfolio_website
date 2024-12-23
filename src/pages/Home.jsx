@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import TypingEffect from "../components/TypingEffect.jsx";
 
-const NAME = "Cormac Taylor";
+const NAME = "cormac taylor";
 
 Home.propTypes = {
   startTyping: PropTypes.bool.isRequired,
@@ -36,7 +36,7 @@ function Home({ startTyping, setStartTyping }) {
               resetTypingEffect={resetTypingEffect}
               setResetTypingEffect={setResetTypingEffect}
             />
-            <p id="landing_description">a highly curious problem solver.</p>
+            <p id="landing_description">a highly curious problem solver</p>
           </div>
         </div>
       </section>
