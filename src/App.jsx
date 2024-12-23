@@ -8,22 +8,35 @@ import Home from "./pages/Home.jsx";
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);
+  const [startTyping, setStartTyping] = useState(false);
 
   useEffect(() => {
-    const hasSeenPopup = localStorage.getItem("hasSeenPopup");
+    const hasSeenPopup = sessionStorage.getItem("hasSeenPopup");
     if (!hasSeenPopup) {
       setShowPopup(true);
-      localStorage.setItem("hasSeenPopup", "true");
+      sessionStorage.setItem("hasSeenPopup", "true");
     }
   }, []);
 
   return (
     <>
-      {showPopup && <Popup onClose={() => setShowPopup(false)} />}
+      {showPopup && (
+        <Popup
+          onClose={() => {
+            setShowPopup(false);
+            setStartTyping(true);
+          }}
+        />
+      )}
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <Home startTyping={startTyping} setStartTyping={setStartTyping} />
+            }
+          />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>

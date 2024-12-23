@@ -24,8 +24,10 @@
 #landing_title {
   font-size: 112px;
   margin: 0px;
+  padding-right: 0.1em;
   width: fit-content;
   white-space: pre;
+  
 }
 
 #landing_description {
@@ -33,9 +35,12 @@
   color: #bfbfbf;
 }
 
-#landing_title {
-  padding-right: 10px;
-  border-right: 4px solid white;
+.empty_title {
+  border-left: 4px solid #efefef;
+}
+
+.title {
+  border-right: 4px solid #efefef;
 }
 
 .animate_caret {
@@ -45,9 +50,9 @@
 @keyframes blink_caret {
   from,
   to {
-    border-color: transparent;
+    border-color: #efefef;
   }
   50% {
-    border-color: white;
+    border-color: transparent;
   }
 }
