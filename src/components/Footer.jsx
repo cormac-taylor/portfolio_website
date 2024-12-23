@@ -17,7 +17,13 @@ function GitHubRef() {
     <div className="footer_box left">
       <p>
         Feel free to check out the source code on{" "}
-        <a href="https://github.com/cormac-taylor/personal_website">github</a>.
+        <a
+          href="https://github.com/cormac-taylor/personal_website"
+          target="_blank"
+        >
+          github
+        </a>
+        .
       </p>
     </div>
   );

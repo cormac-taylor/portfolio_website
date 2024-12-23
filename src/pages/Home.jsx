@@ -9,7 +9,7 @@ function Home() {
       <section className="full_screen_section section">
         <div id="landing_container">
           <div>
-            <TypingEffect text={NAME} />
+            <TypingEffect text={NAME} class_name="animate_caret" />
             <p id="landing_description">a highly curious troubleshooter.</p>
           </div>
         </div>
