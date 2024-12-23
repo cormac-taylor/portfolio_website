@@ -12,7 +12,7 @@
   width: 100vw;
   /* height: 0.1px; */
   /* background-color: #efefef; */
-  border-bottom: 1px solid #efefef;
+  border-bottom: 0.1px solid #efefef;
 }
 
 #landing_container {
