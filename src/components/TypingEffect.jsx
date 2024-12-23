@@ -19,10 +19,9 @@ function TypingEffect({ text, startTyping, setStartTyping, minTypingSpeed = 300,
     const handleBodyClick = () => {
       setStartTyping(true);
     };
-    // const body = document.body;
     document.addEventListener("click", handleBodyClick);
     return () => document.removeEventListener("click", handleBodyClick);
-  }, []);
+  }, [setStartTyping]);
 
   useEffect(() => {
     if (startTyping && index < text.length) {
