@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 
 const IMG_SIZE = 512;
 const MAP_SIZE = 1024;
+const speed_tuner = 0.5;
 
 // https://towardsdatascience.com/fun-with-html-canvas-lets-make-lava-lamp-plasma-e4b0d89fe778
 /* Effectively what happens is the following:
@@ -144,15 +145,16 @@ function Lava() {
 
     // adjust height maps offsets
     const moveHeightMaps = (t) => {
+      const dx = 0.0002 * speed_tuner;
+      const dy = 0.0003 * speed_tuner;
+
       dx1 = Math.floor(
-        (((Math.cos(t * 0.0002 + 0.4 + Math.PI) + 1) / 2) * MAP_SIZE) / 2
+        (((Math.cos(t * dx + 0.4 + Math.PI) + 1) / 2) * MAP_SIZE) / 2
       );
-      dy1 = Math.floor((((Math.cos(t * 0.0003 - 0.1) + 1) / 2) * MAP_SIZE) / 2);
-      dx2 = Math.floor(
-        (((Math.cos(t * -0.0002 + 1.2) + 1) / 2) * MAP_SIZE) / 2
-      );
+      dy1 = Math.floor((((Math.cos(t * dy - 0.1) + 1) / 2) * MAP_SIZE) / 2);
+      dx2 = Math.floor((((Math.cos(t * -dx + 1.2) + 1) / 2) * MAP_SIZE) / 2);
       dy2 = Math.floor(
-        (((Math.cos(t * -0.0003 - 0.8 + Math.PI) + 1) / 2) * MAP_SIZE) / 2
+        (((Math.cos(t * -dy - 0.8 + Math.PI) + 1) / 2) * MAP_SIZE) / 2
       );
     };
 
