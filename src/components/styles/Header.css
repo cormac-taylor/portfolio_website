@@ -7,7 +7,7 @@
   height: 5em;
   display: flex;
   justify-content: space-between;
-  align-items: center;  
+  align-items: center;
   margin-left: calc(100vw / 6);
   margin-right: calc(100vw / 6);
   z-index: 900;
@@ -15,7 +15,7 @@
 
 .nav_box {
   flex: 1;
-width: 50%;  
+  width: 50%;
 }
 
 .nav_link {

@@ -30,3 +30,7 @@ a:hover {
   text-align: right;
   justify-content: right;
 }
+
+.bottom {
+  margin-top: auto;
+}

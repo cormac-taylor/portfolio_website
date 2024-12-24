@@ -1,10 +1,7 @@
 import "./global.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import Popup from "./components/Popup.jsx";
-import Header from "./components/Header.jsx";
-import Footer from "./components/Footer.jsx";
-
+import { Header, Footer, Popup } from "./components/index.js";
 import Home from "./pages/Home.jsx";
 
 function App() {
@@ -12,11 +9,6 @@ function App() {
   const [startTyping, setStartTyping] = useState(false);
 
   useEffect(() => {
-    // const hasSeenPopup = sessionStorage.getItem("hasSeenPopup");
-    // if (!hasSeenPopup) {
-    //   setShowPopup(true);
-    //   sessionStorage.setItem("hasSeenPopup", "true");
-    // }
     setShowPopup(true);
     document.body.style.overflow = "hidden";
     setStartTyping(false);

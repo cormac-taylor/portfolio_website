@@ -1,0 +1,43 @@
+/* Landing.css */
+#landing_container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+#landing_title {
+  font-size: 112px;
+  margin: 0px;
+  padding-right: 0.1em;
+  width: fit-content;
+  white-space: pre;
+}
+
+#landing_description {
+  font-size: 32px;
+  color: #bfbfbf;
+}
+
+.empty_title {
+  border-left: 4px solid #efefef;
+}
+
+.title {
+  border-right: 4px solid #efefef;
+}
+
+.animate_caret {
+  animation: blink_caret 1s step-end infinite;
+}
+
+@keyframes blink_caret {
+  from,
+  to {
+    border-color: #efefef;
+  }
+  50% {
+    border-color: transparent;
+  }
+}

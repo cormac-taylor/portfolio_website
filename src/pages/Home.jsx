@@ -2,9 +2,7 @@ import "./styles/Home.css";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
-import TypingEffect from "../components/TypingEffect.jsx";
-
-const NAME = "cormac taylor";
+import { Landing, About, Projects, Skills } from "../components/index.js";
 
 Home.propTypes = {
   startTyping: PropTypes.bool.isRequired,
@@ -28,36 +26,22 @@ function Home({ startTyping, setStartTyping }) {
   return (
     <>
       <section className="full_screen_section section">
-        <div id="landing_container">
-          <div>
-            <TypingEffect
-              text={NAME}
-              startTyping={startTyping}
-              resetTypingEffect={resetTypingEffect}
-              setResetTypingEffect={setResetTypingEffect}
-            />
-            <p id="landing_description">a highly curious problem solver</p>
-          </div>
-        </div>
+        <Landing
+          startTyping={startTyping}
+          resetTypingEffect={resetTypingEffect}
+          setResetTypingEffect={setResetTypingEffect}
+        />
       </section>
       <div className="full_screen_divider"></div>
       <section className="full_screen_section section">
-        <div className="about_container">
-          <div className="about_box left">
-            <img
-              src="/images/portrait_b&w.png"
-              alt="Portrait of Cormac Taylor"
-            />
-          </div>
-          <div className="about_box right">
-            <h1>About</h1>
-          </div>
-        </div>
+        <About />
       </section>
       <div className="full_screen_divider"></div>
-      <section className="full_screen_section section"></section>
+      <section className="full_screen_section section">
+        <Skills />
+      </section>
       <section className="section">
-        <h2>projects</h2>
+        <Projects />
       </section>
     </>
   );
