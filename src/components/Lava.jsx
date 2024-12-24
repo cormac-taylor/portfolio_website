@@ -95,18 +95,18 @@ function Lava() {
 
     // returns my palete with blue
     const makeBluePalette = () => {
-      const c1 = color(16, 16, 16);
-      const c2 = color(239, 239, 239);
-      const c3 = color(57, 152, 252);
+      const c1 = color(57, 152, 252);
+      const c2 = color(16, 16, 16);
+      const c3 = color(48, 48, 48);
 
       return makeThreeColorGradient(c1, c2, c3);
     };
 
     // returns my palete with gray
     const makeGrayPalette = () => {
-      const c1 = color(16, 16, 16);
-      const c2 = color(239, 239, 239);
-      const c3 = color(191, 191, 191);
+      const c1 = color(191, 191, 191);
+      const c2 = color(16, 16, 16);
+      const c3 = color(48, 48, 48);
 
       return makeThreeColorGradient(c1, c2, c3);
     };
