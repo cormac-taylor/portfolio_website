@@ -25,11 +25,19 @@
   transition: background-color 0.25s ease;
 }
 
+.nav_link img {
+  opacity: 0;
+}
+
 .nav_link:hover {
   color: #101010;
   background-color: #efefef;
   text-decoration: none;
 }
+.nav_link:hover img {
+  opacity: 1;
+}
+
 
 .new_tab_icon {
   vertical-align: middle;
