@@ -1,6 +1,6 @@
 import "./styles/Landing.css";
 import PropTypes from "prop-types";
-import { TypingEffect } from "./index.js";
+import { Lava, TypingEffect } from "./index.js";
 
 const NAME = "cormac taylor";
 
@@ -13,6 +13,7 @@ Landing.propTypes = {
 function Landing({ startTyping, resetTypingEffect, setResetTypingEffect }) {
   return (
     <>
+      <Lava />
       <div id="landing_container">
         <div>
           <TypingEffect

@@ -1,8 +1,4 @@
 /* Home.css */
-.section {
-  margin-left: calc(100vw / 6);
-  margin-right: calc(100vw / 6);
-}
 .full_screen_section {
   width: 70vw;
   height: 100vh;
