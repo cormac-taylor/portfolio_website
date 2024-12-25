@@ -1,7 +1,7 @@
 import "./styles/About.css";
 import { getAge } from "../utilities/index.js";
 
-const BIRTHDAY = "4/1/2003";
+const BIRTHDAY = "4/13/2004";
 
 function About() {
   return (

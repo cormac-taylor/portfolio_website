@@ -24,7 +24,7 @@ function Landing({ startTyping, resetTypingEffect, setResetTypingEffect }) {
           />
           <p id="landing_description">
             I’m a computer science student at Stevens Institute of Technology. I
-            solve hard problems beautifully.
+            love solving hard problems beautifully.
           </p>
         </div>
       </div>
