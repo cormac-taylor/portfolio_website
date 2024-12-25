@@ -1,7 +1,6 @@
 /* Landing.css */
 #landing_container {
-  width: 100%;
-  height: 100%;
+  height: 100vh;
   margin-left: calc(100vw / 6);
   margin-right: calc(100vw / 6);
   display: flex;
@@ -18,8 +17,9 @@
 }
 
 #landing_description {
-  font-size: 32px;
+  font-size: 20px;
   color: #bfbfbf;
+  width: calc(200vw / 6);
 }
 
 .empty_title {

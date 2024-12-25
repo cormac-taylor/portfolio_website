@@ -23,8 +23,8 @@ function Landing({ startTyping, resetTypingEffect, setResetTypingEffect }) {
             setResetTypingEffect={setResetTypingEffect}
           />
           <p id="landing_description">
-            a highly curious kid studying <br />
-            computer science
+            I’m a computer science student at Stevens Institute of Technology. I
+            solve hard problems beautifully.
           </p>
         </div>
       </div>
