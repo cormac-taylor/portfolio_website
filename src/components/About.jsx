@@ -1,5 +1,6 @@
 import "./styles/About.css";
 import { getAge } from "../utilities/index.js";
+import { Info } from "./index.js";
 
 const BIRTHDAY = "4/13/2004";
 
@@ -16,6 +17,7 @@ function About() {
           <p>jcneronvoren</p>
         </div>
       </div>
+      <Info />
     </>
   );
 }

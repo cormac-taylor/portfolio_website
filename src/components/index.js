@@ -7,12 +7,14 @@ import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Lava from "./Lava";
+import Info from "./Info";
 
 export {
   Header,
   Footer,
   Popup,
   TypingEffect,
+  Info,
   Lava,
   Landing,
   About,

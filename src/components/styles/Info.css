@@ -1,0 +1,8 @@
+/* Info.css */
+.info {
+  position: absolute;
+  top: calc(100vh - 40px);
+  left: calc(100vw - 40px);
+  width: 25px;
+  height: 25px;
+}
