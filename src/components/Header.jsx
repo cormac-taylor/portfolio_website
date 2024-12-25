@@ -16,7 +16,7 @@ function Header() {
       <nav className="nav_container">
         <div className="nav_box left">
           <div onClick={handleNavigation}>
-            <img src="/images/ct_logo.svg" alt="CT Logo" className="nav_img" />
+            <img src="/images/logo.svg" alt="Logo" className="nav_img" />
           </div>
         </div>
         <div className="nav_box right">

@@ -111,14 +111,14 @@ function Lava() {
       return makeThreeColorGradient(c1, c2, c3);
     };
 
-    // returns my palete with gray
-    const makeGrayPalette = () => {
-      const c1 = color(191, 191, 191);
-      const c2 = color(16, 16, 16);
-      const c3 = color(48, 48, 48);
+    // // returns my palete with gray
+    // const makeGrayPalette = () => {
+    //   const c1 = color(191, 191, 191);
+    //   const c2 = color(16, 16, 16);
+    //   const c3 = color(48, 48, 48);
 
-      return makeThreeColorGradient(c1, c2, c3);
-    };
+    //   return makeThreeColorGradient(c1, c2, c3);
+    // };
 
     const makeThreeColorGradient = (c1, c2, c3) => {
       const g = [];
@@ -159,7 +159,7 @@ function Lava() {
     };
 
     // two palettes we interpolate between
-    const palettes = [makeBluePalette(), makeGrayPalette()];
+    const palettes = [makeBluePalette(), makeBluePalette()];
 
     // current palette is edstablished durting animation
     let palette = [];
@@ -184,7 +184,7 @@ function Lava() {
         if (direction == -1) {
           palettes[0] = makeBluePalette();
         } else {
-          palettes[1] = makeGrayPalette();
+          palettes[1] = makeBluePalette();
         }
       }
 

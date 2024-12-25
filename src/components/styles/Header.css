@@ -48,8 +48,9 @@
 .nav_img {
   max-height: 3em;
   transition: transform 0.25s ease;
+  transform: scale(1.4);
 }
 
 .nav_img:hover {
-  transform: scale(1.2);
+  transform: scale(1.6);
 }
