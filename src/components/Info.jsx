@@ -17,12 +17,12 @@ function Info({ infoTitle, infoDesc }) {
         <img
           src="/images/info.svg"
           alt="Information icons created by Freepik - Flaticon"
-          className="info"
+          className="info_icon"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
         />
         {isHovering && (
-          <div className="info_description">
+          <div className="info_content">
             <h3>{infoTitle}</h3>
             <p>{infoDesc}</p>
           </div>

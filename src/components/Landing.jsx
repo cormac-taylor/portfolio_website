@@ -37,7 +37,7 @@ function Landing({ startTyping, resetTypingEffect, setResetTypingEffect }) {
           <Info
             infoTitle="Understanding the background"
             infoDesc={
-              "It's the sum of two 2D trig curves from a changing perspective. One resembles ripples in a still pond and the other rolling hills. By combining them, coloring the heights, and moving the viewpoint, a beautifully organic background emerges."
+              "It's the sum of two 2D trig curves from a changing perspective. One resembles ripples in a still pond, the other rolling hills. Combining them, coloring the heights, and moving the viewpoint, a beautifully organic background emerges."
             }
           />
         </div>
