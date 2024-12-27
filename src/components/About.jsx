@@ -17,7 +17,7 @@ function About() {
           <p>oivenoivn</p>
           <p>jcneronvoren</p>
           <Info
-            infoTitle="Understanding the background"
+            infoTitle="Understanding the Background"
             infoDesc={
               "To be completed."
             }
