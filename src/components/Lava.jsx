@@ -19,7 +19,7 @@ function Lava() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    const canvas = document.getElementById("canvas");
+    const canvas = document.getElementById("lava_canvas");
     if (!canvas) {
       console.error("Canvas element is not ready");
       return;
@@ -234,7 +234,7 @@ function Lava() {
   return (
     <>
       <div id="lava_frame">
-        <canvas ref={canvasRef} id="canvas"></canvas>
+        <canvas ref={canvasRef} id="lava_canvas"></canvas>
       </div>
     </>
   );

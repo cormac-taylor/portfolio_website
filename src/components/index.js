@@ -8,6 +8,7 @@ import Skills from "./Skills";
 import Projects from "./Projects";
 import Lava from "./Lava";
 import Info from "./Info";
+import Spipa from "./Spipa";
 
 export {
   Header,
@@ -17,6 +18,7 @@ export {
   Info,
   Lava,
   Landing,
+  Spipa,
   About,
   Skills,
   Projects,

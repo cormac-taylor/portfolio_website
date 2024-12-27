@@ -1,12 +1,13 @@
 import "./styles/About.css";
 import { getAge } from "../utilities/index.js";
-import { Info } from "./index.js";
+import { Info, Spipa } from "./index.js";
 
 const BIRTHDAY = "4/13/2004";
 
 function About() {
   return (
     <>
+      <Spipa />
       <div className="about_container">
         <div className="about_box left bottom">
           <img src="/images/portrait_b&w.png" alt="Portrait of Cormac Taylor" />
