@@ -233,8 +233,8 @@ function Lava() {
 
   return (
     <>
-      <div id="lava_frame">
-        <canvas ref={canvasRef} id="lava_canvas"></canvas>
+      <div id="lava_frame" className="frame">
+        <canvas ref={canvasRef} id="lava_canvas" className="canvas"></canvas>
       </div>
     </>
   );

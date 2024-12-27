@@ -28,13 +28,18 @@ function Landing({ startTyping, resetTypingEffect, setResetTypingEffect }) {
             resetTypingEffect={resetTypingEffect}
             setResetTypingEffect={setResetTypingEffect}
             minTypingSpeed={150}
-            maxTypingSpeed={250}          
+            maxTypingSpeed={250}
           />
           <p id="landing_description">
             I’m a computer science student at Stevens Institute of Technology. I
             love solving hard problems beautifully.
           </p>
-          <Info />
+          <Info
+            infoTitle="Understanding the background"
+            infoDesc={
+              "It's the sum of two 2D trig curves from a changing perspective. One resembles ripples in a still pond and the other rolling hills. By combining them, coloring the heights, and moving the viewpoint, a beautifully organic background emerges."
+            }
+          />
         </div>
       </div>
     </>

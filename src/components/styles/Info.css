@@ -6,3 +6,16 @@
   width: 25px;
   height: 25px;
 }
+
+.info_description {
+  position: absolute;
+  top: calc(100vh - 300px);
+  left: calc(100vw - 450px);
+  background-color: #101010;
+  color: #efefef;
+  border: 1px solid #efefef;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+}

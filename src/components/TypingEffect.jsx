@@ -10,6 +10,7 @@ TypingEffect.propTypes = {
   minTypingSpeed: PropTypes.number,
   maxTypingSpeed: PropTypes.number,
 };
+
 function TypingEffect({
   text,
   startTyping,

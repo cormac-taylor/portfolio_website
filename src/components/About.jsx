@@ -16,9 +16,14 @@ function About() {
           <h2>a {getAge(new Date(BIRTHDAY))} year old studying cs</h2>
           <p>oivenoivn</p>
           <p>jcneronvoren</p>
+          <Info
+            infoTitle="Understanding the background"
+            infoDesc={
+              "To be completed."
+            }
+          />
         </div>
       </div>
-      <Info />
     </>
   );
 }

@@ -6,8 +6,8 @@ function Spipa() {
   const canvasRef = useRef(null);
   return (
     <>
-      <div id="spipa_frame">
-        <canvas ref={canvasRef} id="spipa_canvas"></canvas>
+      <div id="spipa_frame" className="frame">
+        <canvas ref={canvasRef} id="spipa_canvas" className="canvas"></canvas>
       </div>
     </>
   );
