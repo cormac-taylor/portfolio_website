@@ -27,6 +27,8 @@ function Landing({ startTyping, resetTypingEffect, setResetTypingEffect }) {
             startTyping={startTyping}
             resetTypingEffect={resetTypingEffect}
             setResetTypingEffect={setResetTypingEffect}
+            minTypingSpeed={150}
+            maxTypingSpeed={250}          
           />
           <p id="landing_description">
             I’m a computer science student at Stevens Institute of Technology. I

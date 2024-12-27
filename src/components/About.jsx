@@ -12,7 +12,7 @@ function About() {
           <img src="/images/portrait_b&w.png" alt="Portrait of Cormac Taylor" />
         </div>
         <div className="about_box right right_box">
-          <h2>a {getAge(new Date(BIRTHDAY))} year old studing cs</h2>
+          <h2>a {getAge(new Date(BIRTHDAY))} year old studying cs</h2>
           <p>oivenoivn</p>
           <p>jcneronvoren</p>
         </div>

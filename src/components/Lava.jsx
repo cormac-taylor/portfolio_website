@@ -8,10 +8,10 @@ const speed_tuner = 0.5;
 
 // https://towardsdatascience.com/fun-with-html-canvas-lets-make-lava-lamp-plasma-e4b0d89fe778
 /* Effectively what happens is the following:
- *      1. Create two 2 dimensional trig graphs.
+ *      1. Create two two-dimensional trig graphs.
  *          a. One looks much like the ripples from throwing a stone in a still lake.
  *          b. The other looks like a bunch of "random" hills and valleys.
- *      2. You add them togther to create a more complex landscape.
+ *      2. You add them together to create a more complex landscape.
  *      3. Assign colors to the height from "sea level".
  *      4. Move your perspective around the landscape and watch in awe.
  */
