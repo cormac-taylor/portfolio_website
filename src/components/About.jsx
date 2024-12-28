@@ -8,19 +8,17 @@ function About() {
   return (
     <>
       <Spipa />
+      <div id="portrait">
+        <img src="/images/portrait_b&w.png" alt="Portrait of Cormac Taylor" />
+      </div>
       <div className="about_container">
-        <div className="about_box left bottom">
-          <img src="/images/portrait_b&w.png" alt="Portrait of Cormac Taylor" />
-        </div>
         <div className="about_box right right_box">
           <h2>a {getAge(new Date(BIRTHDAY))} year old studying cs</h2>
           <p>oivenoivn</p>
-          <p>jcneronvoren</p>
+          <p>I am currently a course assistant for CS 601: Algorithmic Complexity. I will be joining TD Securities full time rotational program in July.</p>
           <Info
             infoTitle="Understanding the Background"
-            infoDesc={
-              "To be completed."
-            }
+            infoDesc={"To be completed."}
           />
         </div>
       </div>

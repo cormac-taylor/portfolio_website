@@ -10,7 +10,13 @@
   flex: 1;
 }
 
-.about_box img {
+#portrait {
+  position: absolute;
+  bottom: 0px;
+  left: calc(100vw / 6);
+}
+
+#portrait img {
   max-width: calc(200vw / 6);
 }
 
