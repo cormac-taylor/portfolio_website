@@ -1,34 +1,26 @@
 /* About.css */
 .about_container {
-  display: flex;
   height: 100vh;
-  margin-left: calc(100vw / 6);
   margin-right: calc(100vw / 6);
+  margin-top: 10%;
+  text-: center;
 }
 
-.about_box {
-  flex: 1;
+.about_container h2 {
+  font-size: 64px;
+  margin-left: calc(200vw / 6);
 }
 
+.about_container p {
+  font-size: 20px;
+  margin-left: calc(300vw / 6);
+}
 #portrait {
   position: absolute;
   bottom: 0px;
-  left: calc(100vw / 6);
+  left: calc(100vw / 12);
 }
 
 #portrait img {
-  max-width: calc(200vw / 6);
-}
-
-.right_box {
-  margin-top: 10%;
-  width: calc(200vw / 6);
-}
-
-.right_box h2 {
-  font-size: 64px;
-}
-
-.right_box p {
-  font-size: 24px;
+  width: calc(500vw / 12);
 }

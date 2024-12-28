@@ -11,15 +11,18 @@ function About() {
       <div id="portrait">
         <img src="/images/portrait_b&w.png" alt="Portrait of Cormac Taylor" />
       </div>
-      <div className="about_container">
-        <div className="about_box right right_box">
-          <h2>a {getAge(new Date(BIRTHDAY))} year old studying cs</h2>
-          <p>oivenoivn</p>
-          <p>I am currently a course assistant for CS 601: Algorithmic Complexity. I will be joining TD Securities full time rotational program in July.</p>
-          <Info
-            infoTitle="Understanding the Background"
-            infoDesc={"To be completed."}
-          />
+      <div className="center">
+      <div className="about_container right">
+        <h2>A {getAge(new Date(BIRTHDAY))} year old studying CS.</h2>
+        <p>I have a strong foundation in algorithms, machine learning, and web development.</p>
+        <p>
+          I am currently a course assistant for Sandeep Bhatt&apos;s Algorithmic Complexity at Stevens Institute of Technology.
+          I will be joining TD Securities&apos;s full time rotational program in July.
+        </p>
+        <Info
+          infoTitle="Understanding the Background"
+          infoDesc={"To be completed."}
+        />
         </div>
       </div>
     </>
