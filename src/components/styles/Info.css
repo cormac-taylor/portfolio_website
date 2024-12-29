@@ -18,6 +18,7 @@
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  z-index: 1100;
 }
 
 .info_content h3 {
