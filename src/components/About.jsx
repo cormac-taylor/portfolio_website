@@ -1,13 +1,13 @@
 import "./styles/About.css";
 import { getAge } from "../utilities/index.js";
-import { Info, Spipa } from "./index.js";
+import { Info, Circuit } from "./index.js";
 
 const BIRTHDAY = "4/13/2004";
 
 function About() {
   return (
     <>
-      <Spipa />
+      <Circuit />
       <div id="portrait">
         <img src="/images/portrait_b&w.png" alt="Portrait of Cormac Taylor" />
       </div>
@@ -15,13 +15,13 @@ function About() {
         <div className="about_container right">
           <h2>A {getAge(new Date(BIRTHDAY))} year old studying CS.</h2>
           <p>
-            I have a strong foundation in algorithms, machine learning, and web
-            development.
+            I&apos;m a computer science student with a strong foundation in
+            algorithms, machine learning, and web development.
           </p>
           <p>
-            I am currently a course assistant for Sandeep Bhatt&apos;s
-            Algorithmic Complexity at Stevens Institute of Technology. I will be
-            joining TD Securities&apos;s full time rotational program in July.
+            Currently, I&apos;m a Algorithmic Complexity course assistant at
+            Stevens. In July, I&apos;ll be joining TD Securities&apos;s full
+            time rotational program.
           </p>
           <Info
             infoTitle="Understanding the Background"

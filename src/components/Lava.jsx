@@ -19,12 +19,7 @@ function Lava() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    const canvas = document.getElementById("lava_canvas");
-    if (!canvas) {
-      console.error("Canvas element is not ready");
-      return;
-    }
-
+    const canvas = canvasRef.current;
     const c = canvas.getContext("2d");
 
     canvas.width = IMG_SIZE;

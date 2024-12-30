@@ -21,27 +21,29 @@ function Landing({ startTyping, resetTypingEffect, setResetTypingEffect }) {
 
   return (
     <>
-      <Lava />
-      <div id="landing_container">
-        <div>
-          <TypingEffect
-            text={NAME}
-            startTyping={startTyping}
-            resetTypingEffect={resetTypingEffect}
-            setResetTypingEffect={setResetTypingEffect}
-            minTypingSpeed={150}
-            maxTypingSpeed={250}
-          />
-          <p id="landing_description">
-            I’m a computer science student at Stevens Institute of Technology. I
-            love solving hard problems beautifully.
-          </p>
-          <Info
-            infoTitle="Understanding the Background"
-            infoDesc={
-              "It's the sum of two 2D trig curves from a moving perspective. One resembles ripples in a still pond, the other rolling hills. Combining them, coloring the heights, and moving the viewpoint, a beautifully organic background emerges."
-            }
-          />
+      <div>
+        <Lava />
+        <div id="landing_container">
+          <div>
+            <TypingEffect
+              text={NAME}
+              startTyping={startTyping}
+              resetTypingEffect={resetTypingEffect}
+              setResetTypingEffect={setResetTypingEffect}
+              minTypingSpeed={150}
+              maxTypingSpeed={250}
+            />
+            <p id="landing_description">
+              I’m a computer science student at Stevens Institute of Technology.
+              I love solving hard problems beautifully.
+            </p>
+            <Info
+              infoTitle="Understanding the Background"
+              infoDesc={
+                "It's the sum of two 2D trig curves from a moving perspective. One resembles ripples in a still pond, the other rolling hills. Combining them, coloring the heights, and moving the viewpoint, a beautifully organic background emerges."
+              }
+            />
+          </div>
         </div>
       </div>
     </>

@@ -25,7 +25,7 @@ function Home({ startTyping, setStartTyping }) {
 
   return (
     <>
-      <section className="full_screen_section section">
+      <section className="full_screen_section">
         <Landing
           startTyping={startTyping}
           resetTypingEffect={resetTypingEffect}
@@ -33,14 +33,14 @@ function Home({ startTyping, setStartTyping }) {
         />
       </section>
       <div className="full_screen_divider"></div>
-      <section className="full_screen_section section">
+      <section className="full_screen_section">
         <About />
       </section>
       <div className="full_screen_divider"></div>
-      <section className="full_screen_section section">
+      <section className="full_screen_section">
         <Skills />
       </section>
-      <section className="section">
+      <section>
         <Projects />
       </section>
     </>
