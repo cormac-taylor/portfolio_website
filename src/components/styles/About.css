@@ -1,6 +1,5 @@
 /* About.css */
 .about_container {
-  height: 100vh;
   margin-right: calc(100vw / 6);
 }
 
@@ -21,4 +20,10 @@
 
 #portrait img {
   width: calc(500vw / 12);
+}
+
+.tub {
+  display: flex;
+  align-items: center;
+  height: 100vh;
 }
