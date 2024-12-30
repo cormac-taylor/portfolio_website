@@ -1,7 +1,11 @@
 import "./styles/Skills.css";
 
 function Skills() {
-  return <></>;
+  return (
+    <>
+      <h1 className="test">Skills</h1>
+    </>
+  );
 }
 
 export default Skills;

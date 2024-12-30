@@ -25,7 +25,7 @@ function About() {
           </p>
           <Info
             infoTitle="Understanding the Background"
-            infoDesc={"To be completed."}
+            infoDesc="To be completed."
           />
         </div>
       </div>

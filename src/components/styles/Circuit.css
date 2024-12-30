@@ -1,7 +1,7 @@
 /* Spipa.css */
-/* #spipa_frame {
-  position:fixed;
-} */
+#spipa_frame {
+  background-color: aqua;
+}
 
 #spipa_canvas {
   background-color: aqua;

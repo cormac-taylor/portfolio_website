@@ -2,7 +2,6 @@
 .about_container {
   height: 100vh;
   margin-right: calc(100vw / 6);
-  margin-top: 10%;
 }
 
 .about_container h2 {
