@@ -1,6 +1,9 @@
 import "./styles/Circuit.css";
 import { useEffect, useRef } from "react";
 
+const SPEED = 1.5;
+const NUM_PARTICLES = 16;
+
 // https://codepen.io/WindOso/pen/PoXBYdb
 function Circuit() {
   const canvasRef = useRef(null);
@@ -13,61 +16,53 @@ function Circuit() {
 
     const p = [];
 
-    // background bleed
-    function clear() {
-      c.fillStyle = "rgba(0,0,0,0.07)";
-      c.fillRect(0, 0, canvas.width, canvas.height);
-    }
-
-    function particle(x, y, speed, style) {
-      this.x = x;
-      this.y = y;
-      this.speed = speed;
-      this.update = () => {
+    function getParticle(x, y, speed, style) {
+      const partical = {};
+      partical.x = x;
+      partical.y = y;
+      partical.speed = speed;
+      partical.update = () => {
         c.strokeStyle = style;
-        c.lineWidth = 1;
+        c.lineWidth = 1.5;
         c.lineCap = "round";
         c.beginPath();
-        c.moveTo(this.x, this.y);
-        this.x += this.speed.x;
-        this.y += this.speed.y;
-        c.lineTo(this.x, this.y);
+        c.moveTo(partical.x, partical.y);
+        partical.x += partical.speed.x;
+        partical.y += partical.speed.y;
+        c.lineTo(partical.x, partical.y);
         c.stroke();
-        this.ang = Math.atan2(this.speed.y, this.speed.x);
-        this.mag = Math.sqrt(this.speed.x ** 2 + this.speed.y ** 2);
-        var op = [this.ang + Math.PI / 4, this.ang - Math.PI / 4];
+        partical.ang = Math.atan2(partical.speed.y, partical.speed.x);
+        partical.mag = Math.sqrt(partical.speed.x ** 2 + partical.speed.y ** 2);
+        var op = [partical.ang + Math.PI / 4, partical.ang - Math.PI / 4];
         var ch = Math.floor(Math.random() * op.length);
-        if (Math.random() < 0.07) {
-          this.speed.x = Math.cos(op[ch]) * this.mag;
-          this.speed.y = Math.sin(op[ch]) * this.mag;
+        if (Math.random() < 0.015) {
+          partical.speed.x = Math.cos(op[ch]) * partical.mag;
+          partical.speed.y = Math.sin(op[ch]) * partical.mag;
         }
       };
+      return partical;
     }
 
-    var speed = 5;
-    var period = 1000;
-
+    // create particles
     function pulse() {
-      setTimeout(pulse, period);
-      for (var i = 0; i < 56; i++) {
+      for (var i = 0; i < NUM_PARTICLES; i++) {
         p.push(
-          new particle(
-            canvas.width / 2, // spawn x cord
-            canvas.height / 2, // spawn y cord
+          getParticle(
+            canvas.width / 2, // spawn x point
+            canvas.height / 2, // spawn y point
             {
-              x: Math.cos((i / 4) * 2 * Math.PI) * speed,
-              y: Math.sin((i / 4) * 2 * Math.PI) * speed,
+              x: Math.cos((i / 4) * 2 * Math.PI) * SPEED,
+              y: Math.sin((i / 4) * 2 * Math.PI) * SPEED,
             },
-            "rgb(57, 152, 252)"
+            "rgb(57, 152, 252)" // color of paths
           )
         );
       }
     }
 
-    // make blank and remove particals out of frame
+    // update cavas and remove particals once out of bounds
     function gameMove() {
       requestAnimationFrame(gameMove);
-      clear();
       for (var i = 0; i < p.length; i++) {
         p[i].update();
         if (
@@ -83,7 +78,7 @@ function Circuit() {
 
     pulse();
     gameMove();
-  });
+  }, []);
   return (
     <>
       <div id="circuit_frame" className="frame">
