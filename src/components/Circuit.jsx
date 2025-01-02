@@ -37,10 +37,10 @@ function Circuit() {
         var op = [partical.ang + Math.PI / 4, partical.ang - Math.PI / 4]; // angle change
         var ch = Math.floor(Math.random() * op.length); // randomly choose change
         // apply change at chance
-        
+
         /* restrict moving angle pi/2 from inital direction */
         if (Math.random() < 0.008) {
-        // if (partical.x % 4 === 0 && partical.y % 4 === 0) {
+          // if (partical.x % 4 === 0 && partical.y % 4 === 0) {
           partical.speed.x = Math.cos(op[ch]) * partical.mag;
           partical.speed.y = Math.sin(op[ch]) * partical.mag;
         }
