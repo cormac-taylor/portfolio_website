@@ -33,9 +33,14 @@ function Circuit() {
         c.stroke();
         partical.ang = Math.atan2(partical.speed.y, partical.speed.x);
         partical.mag = Math.sqrt(partical.speed.x ** 2 + partical.speed.y ** 2);
-        var op = [partical.ang + Math.PI / 4, partical.ang - Math.PI / 4];
-        var ch = Math.floor(Math.random() * op.length);
-        if (Math.random() < 0.015) {
+
+        var op = [partical.ang + Math.PI / 4, partical.ang - Math.PI / 4]; // angle change
+        var ch = Math.floor(Math.random() * op.length); // randomly choose change
+        // apply change at chance
+        
+        /* restrict moving angle pi/2 from inital direction */
+        if (Math.random() < 0.008) {
+        // if (partical.x % 4 === 0 && partical.y % 4 === 0) {
           partical.speed.x = Math.cos(op[ch]) * partical.mag;
           partical.speed.y = Math.sin(op[ch]) * partical.mag;
         }
@@ -66,8 +71,8 @@ function Circuit() {
       for (var i = 0; i < p.length; i++) {
         p[i].update();
         if (
-          p[i].x < 0 ||
-          p[i].x > canvas.width ||
+          p[i].x < canvas.width / 6 ||
+          p[i].x > 5 * (canvas.width / 6) ||
           p[i].y < 0 ||
           p[i].y > canvas.height
         ) {
@@ -81,8 +86,8 @@ function Circuit() {
   }, []);
   return (
     <>
-      <div id="circuit_frame" className="frame">
-        <canvas ref={canvasRef} id="circuit_canvas" className="canvas"></canvas>
+      <div className="frame">
+        <canvas ref={canvasRef} className="canvas"></canvas>
       </div>
     </>
   );
