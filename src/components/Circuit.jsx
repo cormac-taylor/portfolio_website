@@ -1,5 +1,6 @@
 import "./styles/Circuit.css";
 import { useEffect, useRef } from "react";
+import { getAngleRange } from "../utilities/index.js";
 
 const SPEED = 1.5;
 const NUM_PARTICLES = 16;
@@ -16,33 +17,45 @@ function Circuit() {
 
     const p = [];
 
-    function getParticle(x, y, speed, style) {
+    function getParticle(origin_x, origin_y, velocity) {
       const partical = {};
-      partical.x = x;
-      partical.y = y;
-      partical.speed = speed;
+      partical.x = origin_x;
+      partical.y = origin_y;
+      partical.velocity = velocity;
       partical.update = () => {
-        c.strokeStyle = style;
+        c.strokeStyle = "rgb(57, 152, 252)";
         c.lineWidth = 1.5;
         c.lineCap = "round";
         c.beginPath();
         c.moveTo(partical.x, partical.y);
-        partical.x += partical.speed.x;
-        partical.y += partical.speed.y;
+        partical.x += partical.velocity.x;
+        partical.y += partical.velocity.y;
         c.lineTo(partical.x, partical.y);
         c.stroke();
-        partical.ang = Math.atan2(partical.speed.y, partical.speed.x);
-        partical.mag = Math.sqrt(partical.speed.x ** 2 + partical.speed.y ** 2);
+        partical.angle = Math.atan2(partical.velocity.y, partical.velocity.x);
+        partical.magnitude = Math.sqrt(
+          partical.velocity.x ** 2 + partical.velocity.y ** 2
+        );
 
-        var op = [partical.ang + Math.PI / 4, partical.ang - Math.PI / 4]; // angle change
-        var ch = Math.floor(Math.random() * op.length); // randomly choose change
-        // apply change at chance
+        // const ccw = partical.angle + Math.PI / 4;
+        // const cw = partical.angle - Math.PI / 4;
+
+        const ccw = Math.min(
+          getAngleRange(partical.angle + Math.PI / 4),
+          getAngleRange(velocity.init_angle + Math.PI / 4)
+        );
+        const cw = Math.max(
+          getAngleRange(partical.angle - Math.PI / 4),
+          getAngleRange(velocity.init_angle - Math.PI / 4)
+        );
+        const op = [ccw, cw]; // angle change
+        const ch = Math.floor(Math.random() * op.length); // randomly choose change
 
         /* restrict moving angle pi/2 from inital direction */
+        // apply change at chance
         if (Math.random() < 0.008) {
-          // if (partical.x % 4 === 0 && partical.y % 4 === 0) {
-          partical.speed.x = Math.cos(op[ch]) * partical.mag;
-          partical.speed.y = Math.sin(op[ch]) * partical.mag;
+          partical.velocity.x = Math.cos(op[ch]) * partical.magnitude;
+          partical.velocity.y = Math.sin(op[ch]) * partical.magnitude;
         }
       };
       return partical;
@@ -51,15 +64,17 @@ function Circuit() {
     // create particles
     function pulse() {
       for (var i = 0; i < NUM_PARTICLES; i++) {
+        const init_x = Math.cos((i / 4) * 2 * Math.PI) * SPEED;
+        const init_y = Math.sin((i / 4) * 2 * Math.PI) * SPEED;
         p.push(
           getParticle(
             canvas.width / 2, // spawn x point
             canvas.height / 2, // spawn y point
             {
-              x: Math.cos((i / 4) * 2 * Math.PI) * SPEED,
-              y: Math.sin((i / 4) * 2 * Math.PI) * SPEED,
-            },
-            "rgb(57, 152, 252)" // color of paths
+              x: init_x,
+              y: init_y,
+              init_angle: Math.atan2(init_y, init_x),
+            }
           )
         );
       }
