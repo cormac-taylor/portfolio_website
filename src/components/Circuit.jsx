@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { getAngleRange } from "../utilities/index.js";
 
 const SPEED = 1.5;
-const NUM_PARTICLES = 16;
+const NUM_PARTICLES = 32;
 
 // https://codepen.io/WindOso/pen/PoXBYdb
 function Circuit() {
@@ -19,10 +19,12 @@ function Circuit() {
 
     function getParticle(origin_x, origin_y, velocity) {
       const partical = {};
+      partical.num_updates = 0;
       partical.x = origin_x;
       partical.y = origin_y;
       partical.velocity = velocity;
       partical.update = () => {
+        partical.num_updates++;
         c.strokeStyle = "rgb(57, 152, 252)";
         c.lineWidth = 1.5;
         c.lineCap = "round";
@@ -53,7 +55,8 @@ function Circuit() {
 
         /* restrict moving angle pi/2 from inital direction */
         // apply change at chance
-        if (Math.random() < 0.008) {
+        // if (Math.random() < 0.008) {
+        if (Math.random() < 0.2 && partical.num_updates % 16 === 0) {
           partical.velocity.x = Math.cos(op[ch]) * partical.magnitude;
           partical.velocity.y = Math.sin(op[ch]) * partical.magnitude;
         }
