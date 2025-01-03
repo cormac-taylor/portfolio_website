@@ -1,6 +1,6 @@
 import "./styles/Circuit.css";
 import { useEffect, useRef } from "react";
-import { euclideanDistance, getAngleRange } from "../utilities/index.js";
+import { euclideanDistance, getAngle } from "../utilities/index.js";
 
 const SPEED = 1.75;
 const NUM_PARTICLES = 32;
@@ -35,38 +35,29 @@ function Circuit() {
         c.lineTo(partical.x, partical.y);
         c.stroke();
 
-        partical.angle = getAngleRange(
-          Math.atan2(partical.velocity.y, partical.velocity.x)
-        );
-        for (let angle = 0; angle < 2 * Math.PI; angle += Math.PI / 4) {
-          if (Math.abs(partical.angle - angle) < 0.001) {
-            partical.angle = angle;
-            break;
+        // change angle randomly
+        if (Math.random() < 0.128 && partical.num_updates % 16 === 0) {
+          let validAngles;
+          if (partical.velocity.cur_angle === partical.velocity.init_angle) {
+            validAngles = [
+              partical.velocity.init_angle - 1,
+              partical.velocity.init_angle + 1,
+            ];
+          } else {
+            validAngles = [partical.velocity.init_angle];
           }
-        }
-        partical.magnitude = euclideanDistance(
-          partical.velocity.x,
-          partical.velocity.y
-        );
 
-        /* fix edge case so left particales follow rules */
+          const i = Math.floor(Math.random() * validAngles.length);
 
-        const ccw = Math.min(
-          getAngleRange(partical.angle + Math.PI / 4),
-          getAngleRange(velocity.init_angle + Math.PI / 4)
-        );
-        const cw = Math.max(
-          getAngleRange(partical.angle - Math.PI / 4),
-          getAngleRange(velocity.init_angle - Math.PI / 4)
-        );
-        const op = [ccw, cw]; // angle change
-        const ch = Math.floor(Math.random() * op.length); // randomly choose change
+          const magnitude = euclideanDistance(
+            partical.velocity.x,
+            partical.velocity.y
+          );
 
-        // apply change at chance
-        if (Math.random() < 1) {
-          // if (Math.random() < 0.128 && partical.num_updates % 16 === 0) {
-          partical.velocity.x = Math.cos(op[ch]) * partical.magnitude;
-          partical.velocity.y = Math.sin(op[ch]) * partical.magnitude;
+          const angle = getAngle(validAngles[i]);
+          partical.velocity.x = Math.cos(angle) * magnitude;
+          partical.velocity.y = Math.sin(angle) * magnitude;
+          partical.velocity.cur_angle = validAngles[i];
         }
       };
       return partical;
@@ -75,16 +66,15 @@ function Circuit() {
     // create particles
     function pulse() {
       for (var i = 0; i < NUM_PARTICLES; i++) {
-        const init_x = Math.cos((i / 4) * 2 * Math.PI) * SPEED;
-        const init_y = Math.sin((i / 4) * 2 * Math.PI) * SPEED;
         p.push(
           getParticle(
             canvas.width / 2, // spawn x point
             canvas.height / 2, // spawn y point
             {
-              x: init_x,
-              y: init_y,
-              init_angle: getAngleRange(Math.atan2(init_y, init_x)),
+              x: Math.cos(((i % 4) / 2) * Math.PI) * SPEED,
+              y: Math.sin(((i % 4) / 2) * Math.PI) * SPEED,
+              init_angle: (i % 4) * 2,
+              cur_angle: (i % 4) * 2,
             }
           )
         );
