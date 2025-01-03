@@ -38,10 +38,14 @@ function Circuit() {
         const velocity = partical.velocity;
         const magnitude = euclideanDistance(velocity.x, velocity.y);
 
-        velocity.idx = Math.floor(Math.random() * 3);
+        if (velocity.idx !== 1) {
+          velocity.idx = 1;
+        } else {
+          velocity.idx = Math.floor(Math.random() * 2) * 2;
+        }
 
-        console.log(velocity.idx)
         // apply change at random
+        // some how the modulous condition breaks it
         if (Math.random() < 0.128 && partical.num_updates % 16 === 0) {
           velocity.x = Math.cos(velocity.angles[velocity.idx]) * magnitude;
           velocity.y = Math.sin(velocity.angles[velocity.idx]) * magnitude;
