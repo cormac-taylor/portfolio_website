@@ -1,6 +1,6 @@
 import "./styles/Circuit.css";
 import { useEffect, useRef } from "react";
-import { getAngleRange } from "../utilities/index.js";
+import { euclideanDistance, getAngleRange } from "../utilities/index.js";
 
 const SPEED = 1.75;
 const NUM_PARTICLES = 32;
@@ -34,10 +34,22 @@ function Circuit() {
         partical.y += partical.velocity.y;
         c.lineTo(partical.x, partical.y);
         c.stroke();
-        partical.angle = Math.atan2(partical.velocity.y, partical.velocity.x);
-        partical.magnitude = Math.sqrt(
-          partical.velocity.x ** 2 + partical.velocity.y ** 2
+
+        partical.angle = getAngleRange(
+          Math.atan2(partical.velocity.y, partical.velocity.x)
         );
+        for (let angle = 0; angle < 2 * Math.PI; angle += Math.PI / 4) {
+          if (Math.abs(partical.angle - angle) < 0.001) {
+            partical.angle = angle;
+            break;
+          }
+        }
+        partical.magnitude = euclideanDistance(
+          partical.velocity.x,
+          partical.velocity.y
+        );
+
+        /* fix edge case so left particales follow rules */
 
         const ccw = Math.min(
           getAngleRange(partical.angle + Math.PI / 4),
@@ -50,10 +62,9 @@ function Circuit() {
         const op = [ccw, cw]; // angle change
         const ch = Math.floor(Math.random() * op.length); // randomly choose change
 
-        /* restrict moving angle pi/2 from inital direction */
         // apply change at chance
         if (Math.random() < 1) {
-        // if (Math.random() < 0.128 && partical.num_updates % 16 === 0) {
+          // if (Math.random() < 0.128 && partical.num_updates % 16 === 0) {
           partical.velocity.x = Math.cos(op[ch]) * partical.magnitude;
           partical.velocity.y = Math.sin(op[ch]) * partical.magnitude;
         }
@@ -73,7 +84,7 @@ function Circuit() {
             {
               x: init_x,
               y: init_y,
-              init_angle: Math.atan2(init_y, init_x),
+              init_angle: getAngleRange(Math.atan2(init_y, init_x)),
             }
           )
         );
