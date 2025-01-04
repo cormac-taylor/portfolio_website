@@ -21,8 +21,8 @@
   z-index: 1100;
 }
 
-.info_content h3 {
-  font-size: large;
+.info_content h4 {
+  font-size: larger;
   font-weight: bold;
 }
 

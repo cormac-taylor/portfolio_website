@@ -23,6 +23,14 @@
   text-align: center;
 }
 
+.popup_content h4 {
+  font-size: larger;
+}
+
+.popup_content p {
+  font-size: medium;
+}
+
 .popup_content button {
   margin-top: 10px;
   font-family: "Menlo", "Ubuntu Mono", "DejaVu Sans Mono", "Consolas",

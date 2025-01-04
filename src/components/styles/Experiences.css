@@ -1,16 +1,16 @@
-/* Projects.css */
-#projects_div{ 
+/* Experiences.css */
+#experiences_div{ 
     margin-left: calc(100vw / 6);
     margin-right: calc(100vw / 2);
 }
 
-.project {
+.experience {
     border: 1px solid #efefef;
     border-radius: 10px;
     padding: 20px;
     margin-top: 5px;
 }
 
-.project h3 {
+.experience h3 {
     margin: 0px;
 }

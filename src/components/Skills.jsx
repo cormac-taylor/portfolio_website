@@ -1,9 +1,20 @@
 import "./styles/Skills.css";
+import Info from "./Info";
 
 function Skills() {
   return (
     <>
-      <h1 className="test">Skills</h1>
+      <div>
+        <div id="skills_div">
+          <div>
+            <h2>The Foundation</h2>
+          </div>
+        </div>
+        <Info
+          infoTitle="Understanding the Background"
+          infoDesc="To be implemented..."
+        />
+      </div>
     </>
   );
 }

@@ -9,6 +9,7 @@ import Projects from "./Projects";
 import Lava from "./Lava";
 import Info from "./Info";
 import Circuit from "./Circuit";
+import Experiences from "./Experiences";
 
 export {
   Header,
@@ -22,4 +23,5 @@ export {
   About,
   Skills,
   Projects,
+  Experiences,
 };

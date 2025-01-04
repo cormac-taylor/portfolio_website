@@ -4,6 +4,8 @@
   margin-left: calc(100vw / 6);
   margin-right: calc(100vw / 6);
   z-index: 900;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .footer_box {

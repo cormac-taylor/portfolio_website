@@ -23,7 +23,7 @@ function Info({ infoTitle, infoDesc }) {
         />
         {isHovering && (
           <div className="info_content">
-            <h3>{infoTitle}</h3>
+            <h4>{infoTitle}</h4>
             <p>{infoDesc}</p>
           </div>
         )}

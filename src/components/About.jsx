@@ -29,7 +29,7 @@ function About() {
         <Info
           infoTitle="Understanding the Background"
           infoDesc={
-            "It's a set a particles set loose with a restricted set of behaviors. Each one moves freely but must always move in its initial direction, mimicking the intentional flow of a circuit. The outcome is an appealing mix of precision and randomness."
+            "It's a set a particles let loose with a restricted set of behaviors. Each one moves freely but must always move in its initial direction, mimicking the intentional flow of a circuit. The outcome is an appealing mix of precision and randomness."
           }
         />
       </div>

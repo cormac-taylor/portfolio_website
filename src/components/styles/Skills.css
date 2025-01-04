@@ -1,1 +1,16 @@
 /* Skills.css */
+#skills_div {
+  margin-left: calc(100vw / 6);
+  margin-right: calc(100vw / 2);
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+#skills_div h2 {
+  font-size: 64px;
+}
+
+#skills_div p {
+  font-size: 20px;
+}
