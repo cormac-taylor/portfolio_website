@@ -37,14 +37,14 @@ function Landing({ startTyping, resetTypingEffect, setResetTypingEffect }) {
               I’m a computer science student at Stevens Institute of Technology.
               I love solving hard problems beautifully.
             </p>
-            <Info
-              infoTitle="Understanding the Background"
-              infoDesc={
-                "It's the sum of two 2D trig curves from a moving perspective. One resembles ripples in a still pond, the other rolling hills. Combining them, coloring the heights, and moving the viewpoint, a beautifully organic background emerges."
-              }
-            />
           </div>
         </div>
+        <Info
+          infoTitle="Understanding the Background"
+          infoDesc={
+            "It's the sum of two 2D trig curves from a moving perspective. One resembles ripples in a still pond, the other rolling hills. Combining them, coloring the heights, and moving the viewpoint, a beautifully organic background emerges."
+          }
+        />
       </div>
     </>
   );

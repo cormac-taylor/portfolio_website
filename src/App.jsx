@@ -9,27 +9,6 @@ function App() {
   const [startTyping, setStartTyping] = useState(false);
 
   useEffect(() => {
-    const saveScrollPosition = () => {
-      localStorage.setItem("scrollPosition", window.scrollY);
-    };
-
-    const restoreScrollPosition = () => {
-      const savedPosition = localStorage.getItem("scrollPosition");
-      if (savedPosition) {
-        window.scrollTo(0, parseInt(savedPosition, 10));
-      }
-    };
-
-    window.addEventListener("beforeunload", saveScrollPosition);
-
-    restoreScrollPosition();
-
-    return () => {
-      window.removeEventListener("beforeunload", saveScrollPosition);
-    };
-  }, []);
-
-  useEffect(() => {
     setShowPopup(true);
     document.body.style.overflow = "hidden";
     setStartTyping(false);
