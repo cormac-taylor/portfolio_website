@@ -102,7 +102,7 @@ function Circuit() {
   }, []);
   return (
     <>
-      <div className="frame">
+      <div id="circuitFrame"className="frame">
         <canvas ref={canvasRef} className="canvas"></canvas>
       </div>
     </>
