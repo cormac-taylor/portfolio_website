@@ -16,6 +16,16 @@ function GitHubRef() {
   return (
     <div className="footer_box left">
       <p>
+        <a
+          href="https://github.com/cormac-taylor/personal_website?tab=readme-ov-file#sources"
+          target="_blank"
+        >
+          Acknowledgments
+        </a>
+        .
+      </p>
+
+      <p>
         Feel free to check out the source code on{" "}
         <a
           href="https://github.com/cormac-taylor/personal_website"
