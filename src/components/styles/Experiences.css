@@ -14,3 +14,7 @@
 .experience h3 {
   margin: 0px;
 }
+
+.experience img {
+  max-width: 60%;
+}

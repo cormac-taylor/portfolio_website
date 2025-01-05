@@ -45,6 +45,7 @@ function Experience({ company, title, location, date, desc }) {
     <>
       <div className="experience">
         <h3>{company}</h3>
+        <img src="/public/images/jostrong_logo.svg" alt="Stevens Logo" />
         <p>{title}</p>
         <div>
           <span>{location}</span>
