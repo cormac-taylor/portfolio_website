@@ -8,49 +8,49 @@ function Projects() {
         <h2>Projects</h2>
         <Project
           title="Portfolio Website"
-          desc="Desc."
+          desc="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis ac maximus massa posuere elit neque laoreet. Bibendum aliquam etiam nisi iaculis fames massa. "
           youtube_url="https://www.youtube.com/@cormac-taylor"
           github_url="https://github.com/cormac-taylor/personal_website"
         />
         <Project
           title="Neural Network"
-          desc="Desc."
+          desc="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis ac maximus massa posuere elit neque laoreet. Bibendum aliquam etiam nisi iaculis fames massa. "
           youtube_url="https://www.youtube.com/@cormac-taylor"
           github_url="https://github.com/cormac-taylor/neural_network"
         />
         <Project
           title="Full Stack Web App"
-          desc="Desc."
+          desc="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis ac maximus massa posuere elit neque laoreet. Bibendum aliquam etiam nisi iaculis fames massa. "
           youtube_url="https://www.youtube.com/@cormac-taylor"
           github_url="https://github.com/cormac-taylor/cs546_group22_final_project"
         />
         <Project
           title="Mini Chat App"
-          desc="Desc."
+          desc="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis ac maximus massa posuere elit neque laoreet. Bibendum aliquam etiam nisi iaculis fames massa. "
           youtube_url="https://www.youtube.com/@cormac-taylor"
           github_url="https://github.com/cormac-taylor/chat_app"
         />
         <Project
           title="CRUD API Server"
-          desc="Desc."
+          desc="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis ac maximus massa posuere elit neque laoreet. Bibendum aliquam etiam nisi iaculis fames massa. "
           youtube_url="https://www.youtube.com/@cormac-taylor"
           github_url="https://github.com/cormac-taylor/sports_team_API_server"
         />
         <Project
           title="Multiplayer Trivia Game"
-          desc="Desc."
+          desc="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis ac maximus massa posuere elit neque laoreet. Bibendum aliquam etiam nisi iaculis fames massa. "
           youtube_url="https://www.youtube.com/@cormac-taylor"
           github_url="https://github.com/cormac-taylor/online_multiplayer_trivia_game"
         />
         <Project
           title="Mini Unix Shell"
-          desc="Desc."
+          desc="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis ac maximus massa posuere elit neque laoreet. Bibendum aliquam etiam nisi iaculis fames massa. "
           youtube_url="https://www.youtube.com/@cormac-taylor"
           github_url="https://github.com/cormac-taylor/mini_shell"
         />
         <Project
           title="CPU and Assembler"
-          desc="Desc."
+          desc="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis ac maximus massa posuere elit neque laoreet. Bibendum aliquam etiam nisi iaculis fames massa. "
           youtube_url="https://www.youtube.com/@cormac-taylor"
           github_url="https://github.com/cormac-taylor/custom_cpu_and_assembler"
         />
@@ -72,14 +72,27 @@ function Project({ title, desc, youtube_url, github_url }) {
       <div className="project">
         <h3>{title}</h3>
         <p>{desc}</p>
-        <div>
-          <a href={youtube_url} target="_blank">
-            YouTube
-          </a>
-          <br />
-          <a href={github_url} target="_blank">
-            GitHub
-          </a>
+        <div className="project_container">
+          <div className="project_box center">
+            <a href={youtube_url} target="_blank" className="proj_link">
+              Video Showcase
+              <img
+                src="/images/new_tab.svg"
+                alt="New window icon by Grand Iconic - Flaticon"
+                className="new_tab_icon"
+              />
+            </a>
+          </div>
+          <div className="project_box center divider">
+            <a href={github_url} target="_blank" className="proj_link">
+              Source Code
+              <img
+                src="/images/new_tab.svg"
+                alt="New window icon by Grand Iconic - Flaticon"
+                className="new_tab_icon"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </>

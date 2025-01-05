@@ -1,4 +1,8 @@
 /* Experiences.css */
+h2 {
+  font-size: xxx-large;
+}
+
 #experiences_div {
   margin-left: calc(100vw / 6);
   margin-right: calc(100vw / 2);
@@ -8,14 +12,34 @@
   border: 1px solid #efefef;
   border-radius: 10px;
   padding: 20px;
-  margin-top: 5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  transition: transform 0.25s ease;
+}
+
+.experience:hover {
+  transform: scale(1.05);
 }
 
 .experience h3 {
-  margin: 0px;
+  font-size: x-large;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .experience img {
   max-width: 60%;
   height: 60px;
+}
+
+.experience_container {
+  display: flex;
+}
+
+.experience_box {
+  flex: 1;
+}
+
+span {
+  font-style: italic;
 }

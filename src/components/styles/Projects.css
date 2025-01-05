@@ -8,9 +8,44 @@
   border: 1px solid #efefef;
   border-radius: 10px;
   padding: 20px;
-  margin-top: 5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  transition: transform 0.25s ease;
+}
+
+.project:hover {
+  transform: scale(1.05);
 }
 
 .project h3 {
-  margin: 0px;
+  font-size: x-large;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.project_container {
+  display: flex;
+}
+
+.project_box {
+  flex: 1;
+  justify-content: center;
+}
+
+.proj_link {
+  color: #efefef;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  transition: background-color 0.25s ease; 
+  width: 100%;
+}
+
+.proj_link:hover {
+  color: #101010;
+  background-color: #efefef;
+  text-decoration: none;
+}
+
+.divider {
+  border-left: 1px solid #efefef;
 }
