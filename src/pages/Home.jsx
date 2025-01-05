@@ -2,7 +2,13 @@ import "./styles/Home.css";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
-import { Landing, About, Projects, Skills, Experiences } from "../components/index.js";
+import {
+  Landing,
+  About,
+  Projects,
+  Skills,
+  Experiences,
+} from "../components/index.js";
 
 Home.propTypes = {
   startTyping: PropTypes.bool.isRequired,
@@ -41,8 +47,8 @@ function Home({ startTyping, setStartTyping }) {
         <Skills />
       </section>
       <section>
-        <Projects />
         <Experiences />
+        <Projects />
       </section>
     </>
   );

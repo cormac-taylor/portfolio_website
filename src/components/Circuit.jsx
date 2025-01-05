@@ -2,7 +2,7 @@ import "./styles/Circuit.css";
 import { useEffect, useRef, useState } from "react";
 import { euclideanDistance, getAngle } from "../utilities/index.js";
 
-const SPEED = 4;
+const SPEED = 3;
 const NUM_PARTICLES = 32;
 
 // https://codepen.io/WindOso/pen/PoXBYdb

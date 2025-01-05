@@ -7,34 +7,52 @@ function Projects() {
       <div id="projects_div">
         <h2>Projects</h2>
         <Project
-          title="Proj_1"
+          title="Portfolio Website"
           desc="Desc."
           youtube_url="https://www.youtube.com/@cormac-taylor"
-          github_url="https://github.com/cormac-taylor"
+          github_url="https://github.com/cormac-taylor/personal_website"
         />
         <Project
-          title="Proj_2"
+          title="Neural Network"
           desc="Desc."
           youtube_url="https://www.youtube.com/@cormac-taylor"
-          github_url="https://github.com/cormac-taylor"
+          github_url="https://github.com/cormac-taylor/neural_network"
         />
         <Project
-          title="Proj_3"
+          title="Full Stack Web App"
           desc="Desc."
           youtube_url="https://www.youtube.com/@cormac-taylor"
-          github_url="https://github.com/cormac-taylor"
+          github_url="https://github.com/cormac-taylor/cs546_group22_final_project"
         />
         <Project
-          title="Proj_4"
+          title="Mini Chat App"
           desc="Desc."
           youtube_url="https://www.youtube.com/@cormac-taylor"
-          github_url="https://github.com/cormac-taylor"
+          github_url="https://github.com/cormac-taylor/chat_app"
         />
         <Project
-          title="Proj_5"
+          title="CRUD API Server"
           desc="Desc."
           youtube_url="https://www.youtube.com/@cormac-taylor"
-          github_url="https://github.com/cormac-taylor"
+          github_url="https://github.com/cormac-taylor/sports_team_API_server"
+        />
+        <Project
+          title="Multiplayer Trivia Game"
+          desc="Desc."
+          youtube_url="https://www.youtube.com/@cormac-taylor"
+          github_url="https://github.com/cormac-taylor/online_multiplayer_trivia_game"
+        />
+        <Project
+          title="Mini Unix Shell"
+          desc="Desc."
+          youtube_url="https://www.youtube.com/@cormac-taylor"
+          github_url="https://github.com/cormac-taylor/mini_shell"
+        />
+        <Project
+          title="CPU and Assembler"
+          desc="Desc."
+          youtube_url="https://www.youtube.com/@cormac-taylor"
+          github_url="https://github.com/cormac-taylor/custom_cpu_and_assembler"
         />
       </div>
     </>
@@ -59,7 +77,9 @@ function Project({ title, desc, youtube_url, github_url }) {
             YouTube
           </a>
           <br />
-          <a href={github_url} target="_blank">GitHub</a>
+          <a href={github_url} target="_blank">
+            GitHub
+          </a>
         </div>
       </div>
     </>
