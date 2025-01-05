@@ -3,7 +3,7 @@ function getAngleRange(angle) {
 }
 
 function getAngle(section) {
-  return section * Math.PI / 4;
+  return (section * Math.PI) / 4;
 }
 
 export { getAngleRange, getAngle };

@@ -5,9 +5,9 @@ import PropTypes from "prop-types";
 import {
   Landing,
   About,
-  Projects,
   Skills,
   Experiences,
+  Projects,
 } from "../components/index.js";
 
 Home.propTypes = {

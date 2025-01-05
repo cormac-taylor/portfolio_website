@@ -4,4 +4,11 @@ import getAge from "./getAge.js";
 import euclideanDistance from "./euclideanDistance.js";
 import { getAngleRange, getAngle } from "./angle.js";
 
-export { getRandomInt, playRandomKeystroke, getAge, euclideanDistance, getAngleRange, getAngle };
+export {
+  getRandomInt,
+  playRandomKeystroke,
+  getAge,
+  euclideanDistance,
+  getAngleRange,
+  getAngle,
+};
