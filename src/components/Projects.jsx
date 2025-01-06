@@ -38,12 +38,12 @@ function Projects() {
           github_url="https://github.com/cormac-taylor/cs546_group22_final_project"
         />
         <Project
-          src="/images/no_image.jpeg"
+          src="/images/projects/mini_chat_room.png"
           alt="no image"
           title="Mini Chat App"
           date="November 2024"
-          desc="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis ac maximus massa posuere elit neque laoreet. Bibendum aliquam etiam nisi iaculis fames massa. "
-          youtube_url="https://www.youtube.com/@cormac-taylor"
+          desc="A simple chat room app enabling multiple users to communicate across various rooms, using a command-line-like interface."
+          youtube_url="https://youtu.be/7dskLY4Oli4"
           github_url="https://github.com/cormac-taylor/chat_app"
         />
         <Project
