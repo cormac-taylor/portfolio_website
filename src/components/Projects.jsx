@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import "./styles/Projects.css";
+import ExternalLink from "./ExternalLink";
 
 function Projects() {
   return (
@@ -81,24 +82,10 @@ function Project({ title, desc, youtube_url, github_url }) {
           <p>{desc}</p>
           <div className="project_container">
             <div className="project_box center">
-              <a href={youtube_url} target="_blank" className="proj_link">
-                Walkthrough
-                <img
-                  src="/images/new_tab.svg"
-                  alt="New window icon by Grand Iconic - Flaticon"
-                  className="new_tab_icon"
-                />
-              </a>
+              <ExternalLink url={youtube_url} txt="Walkthrough" />
             </div>
             <div className="project_box center divider">
-              <a href={github_url} target="_blank" className="proj_link">
-                Source Code
-                <img
-                  src="/images/new_tab.svg"
-                  alt="New window icon by Grand Iconic - Flaticon"
-                  className="new_tab_icon"
-                />
-              </a>
+              <ExternalLink url={github_url} txt="Source Code" />
             </div>
           </div>
         </div>

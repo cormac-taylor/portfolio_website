@@ -1,0 +1,26 @@
+/* ExternalLink.css */
+.nav_link {
+  color: #efefef;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  transition: background-color 0.25s ease;
+}
+
+.nav_link img {
+  opacity: 0;
+}
+
+.nav_link:hover {
+  color: #101010;
+  background-color: #efefef;
+  text-decoration: none;
+}
+.nav_link:hover img {
+  opacity: 1;
+}
+
+.new_tab_icon {
+  vertical-align: middle;
+  padding-left: 0.5em;
+  max-width: 0.8em;
+}

@@ -66,20 +66,6 @@
   justify-content: center;
 }
 
-.proj_link {
-  color: #efefef;
-  padding: 0.5em 1em;
-  border-radius: 0.5em;
-  transition: background-color 0.25s ease;
-  width: 100%;
-}
-
-.proj_link:hover {
-  color: #101010;
-  background-color: #efefef;
-  text-decoration: none;
-}
-
 .divider {
   border-left: 1px solid #efefef;
 }

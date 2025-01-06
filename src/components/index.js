@@ -10,6 +10,7 @@ import Lava from "./Lava";
 import Info from "./Info";
 import Circuit from "./Circuit";
 import Experiences from "./Experiences";
+import ExternalLink from "./ExternalLink";
 
 export {
   Header,
@@ -24,4 +25,5 @@ export {
   Skills,
   Projects,
   Experiences,
+  ExternalLink,
 };
