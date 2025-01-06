@@ -12,7 +12,7 @@ function Projects() {
         </p>
         <Project
           src="/images/projects/portfolio_website.png"
-          alt="no image"
+          alt="Screen shot of home page for this website"
           title="Portfolio Website"
           date="January 2025"
           desc="You are admiring this right now! It's a collection of some of the best things I've made, so it's easy for you to parse."
@@ -20,11 +20,11 @@ function Projects() {
           github_url="https://github.com/cormac-taylor/personal_website"
         />
         <Project
-          src="/images/no_image.jpeg"
-          alt="no image"
-          title="Neural Network"
+          src="/images/projects/variable_neural_network.png"
+          alt="Image of a neural network diagram"
+          title="Variable Neural Network"
           date="December 2024"
-          desc="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis ac maximus massa posuere elit neque laoreet. Bibendum aliquam etiam nisi iaculis fames massa. "
+          desc="A simple neural network from scratch using softmax and one-hot encoding for classification. It uses backpropagation and gradient descent to train."
           youtube_url="https://www.youtube.com/@cormac-taylor"
           github_url="https://github.com/cormac-taylor/neural_network"
         />
