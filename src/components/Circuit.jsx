@@ -1,4 +1,4 @@
-import "./styles/Circuit.css"
+import "./styles/Circuit.css";
 import { useEffect, useRef, useState } from "react";
 import { euclideanDistance, getAngle } from "../utilities/index.js";
 

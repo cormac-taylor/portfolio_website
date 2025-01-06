@@ -11,6 +11,7 @@ import Info from "./Info";
 import Circuit from "./Circuit";
 import Experiences from "./Experiences";
 import ExternalLink from "./ExternalLink";
+import Network from "./Network";
 
 export {
   Header,
@@ -26,4 +27,5 @@ export {
   Projects,
   Experiences,
   ExternalLink,
+  Network,
 };

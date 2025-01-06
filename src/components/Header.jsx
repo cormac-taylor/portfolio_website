@@ -1,6 +1,6 @@
 import "./styles/Header.css";
 import { useNavigate } from "react-router-dom";
-import { ExternalLink } from "./index.js"
+import { ExternalLink } from "./index.js";
 
 const EMAIL = "cormacmtaylor@gmail.com";
 

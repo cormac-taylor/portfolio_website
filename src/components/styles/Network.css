@@ -1,0 +1,9 @@
+/* Network.css */
+#skills_network {
+  width: 100vw;
+  height: 100vh;
+  z-index: -200;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
