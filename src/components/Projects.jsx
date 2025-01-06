@@ -25,7 +25,7 @@ function Projects() {
           title="Variable Neural Network"
           date="December 2024"
           desc="A simple neural network from scratch using softmax and one-hot encoding for classification. It uses backpropagation and gradient descent to train."
-          youtube_url="https://www.youtube.com/@cormac-taylor"
+          youtube_url="https://youtu.be/WrUIKdE7VhM"
           github_url="https://github.com/cormac-taylor/neural_network"
         />
         <Project
@@ -34,7 +34,7 @@ function Projects() {
           title="Full Stack Web App"
           date="December 2024"
           desc="Discover all things board games in one place: borrow games nearby, read reviews of your favorites, and check out upcoming meetups!"
-          youtube_url="https://www.youtube.com/watch?v=wPT4nlQ146o"
+          youtube_url="https://youtu.be/wPT4nlQ146o"
           github_url="https://github.com/cormac-taylor/cs546_group22_final_project"
         />
         <Project
