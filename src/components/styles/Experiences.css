@@ -22,11 +22,13 @@
   margin-bottom: 30px;
   filter: brightness(0.732);
   transition: all 0.25s ease;
+  background-color: #161616;
 }
 
 .experience:hover {
   transform: scale(1.05);
   filter: brightness(1);
+  background-color: #101010;
 }
 
 .experience h3 {

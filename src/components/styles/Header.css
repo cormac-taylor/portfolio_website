@@ -5,12 +5,17 @@
   left: 0;
   right: 0;
   height: 5em;
+  background: linear-gradient(to bottom, rgba(16, 16, 16, 1), rgba(16, 16, 16, 0));
+  z-index: 900;
+}
+
+#nav_content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-left: calc(100vw / 6);
   margin-right: calc(100vw / 6);
-  z-index: 900;
+  height: 100%;
 }
 
 .nav_box {

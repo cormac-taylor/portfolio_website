@@ -5,8 +5,10 @@ function Footer() {
   return (
     <>
       <footer className="footer_container">
-        <GitHubRef />
-        <Contacts />
+        <div id="footer_content">
+          <GitHubRef />
+          <Contacts />
+        </div>
       </footer>
     </>
   );

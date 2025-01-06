@@ -1,11 +1,15 @@
 /* Footer.css */
 .footer_container {
+  z-index: 900;
+  background-color: rgba(16, 16, 16, 0.8);
+}
+
+#footer_content {
   display: flex;
   margin-left: calc(100vw / 6);
   margin-right: calc(100vw / 6);
-  z-index: 900;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 .footer_box {

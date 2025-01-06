@@ -14,20 +14,22 @@ function Header() {
   return (
     <>
       <nav className="nav_container">
-        <div className="nav_box left">
-          <div onClick={handleNavigation}>
-            <img src="/images/logo.svg" alt="Logo" className="nav_img" />
+        <div id="nav_content">
+          <div className="nav_box left">
+            <div onClick={handleNavigation}>
+              <img src="/images/logo.svg" alt="Logo" className="nav_img" />
+            </div>
           </div>
-        </div>
-        <div className="nav_box right">
-          <NavExternalLink
-            url="https://www.cormac-taylor.com/Cormac_Taylor_Resume.pdf"
-            txt="Resume"
-          />
-          <NavExternalLink
-            url={`https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`}
-            txt="Contact"
-          />
+          <div className="nav_box right">
+            <NavExternalLink
+              url="https://www.cormac-taylor.com/Cormac_Taylor_Resume.pdf"
+              txt="Resume"
+            />
+            <NavExternalLink
+              url={`https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`}
+              txt="Contact"
+            />
+          </div>
         </div>
       </nav>
     </>
