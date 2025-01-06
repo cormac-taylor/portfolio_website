@@ -30,6 +30,14 @@
   background-color: #101010;
 }
 
+.project .thumbnail img {
+  filter: grayscale(100%);
+}
+
+.project:hover .thumbnail img {
+  filter: grayscale(0%);
+}
+
 .thumbnail {
   border-radius: 8px 8px 0px 0px;
   width: 100%;

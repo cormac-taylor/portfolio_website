@@ -10,21 +10,21 @@ function Experiences() {
           Hover over an experience to see the related skills.
         </p>
         <Experience
-          company_logo="/images/stevens_logo.svg"
+          company_logo="/images/experiences/stevens_logo.svg"
           title="Course Assistant"
           location="Hoboken, NJ"
           date="January 2024 - Present"
           desc="Proctoring exams and grading assignments on topics such as Turing Machines, computability, complexity classes, and reductions."
         />
         <Experience
-          company_logo="/images/jostrong_logo.svg"
+          company_logo="/images/experiences/jostrong_logo.svg"
           title="Lead Developer"
           location="Hoboken, NJ"
           date="August 2024 - Present"
           desc="Developing a full-stack CRM-style web app for a fitness coach to improve efficiency and automate processes."
         />
         <Experience
-          company_logo="/images/td_securities_logo.svg"
+          company_logo="/images/experiences/td_securities_logo.svg"
           title="Software Engineer Intern"
           location="New York, NY"
           date="June 2024 - August 2024"

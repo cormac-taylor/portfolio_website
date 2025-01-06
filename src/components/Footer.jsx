@@ -47,17 +47,17 @@ function Contacts() {
       <div className="img_links_container">
         <SocialsExternalLink
           url="https://www.linkedin.com/in/cormac-taylor/"
-          src="/images/linked_in_logo.png"
+          src="/images/social_logos/linked_in_logo.png"
           alt="LinkedIn Logo"
         />
         <SocialsExternalLink
           url="https://github.com/cormac-taylor"
-          src="/images/github_logo.png"
+          src="/images/social_logos/github_logo.png"
           alt="GitHub Logo"
         />
         <SocialsExternalLink
           url="https://www.youtube.com/@cormac-taylor"
-          src="/images/youtube_logo.png"
+          src="/images/social_logos/youtube_logo.png"
           alt="YouTube Logo"
         />
       </div>
