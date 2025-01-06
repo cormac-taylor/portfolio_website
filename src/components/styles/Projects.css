@@ -17,7 +17,6 @@
 .project {
   border: 1px solid #effeef;
   border-radius: 10px;
-  padding: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
   filter: brightness(0.732);
@@ -29,6 +28,27 @@
   transform: scale(1.05);
   filter: brightness(1);
   background-color: #101010;
+}
+
+.thumbnail {
+  border-radius: 8px 8px 0px 0px;
+  width: 100%;
+  height: 150px;
+  position: relative; 
+  overflow: hidden;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.project_content {
+  padding: 0px 20px 20px 20px;
 }
 
 .project h3 {

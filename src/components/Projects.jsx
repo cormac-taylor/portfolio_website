@@ -73,28 +73,33 @@ function Project({ title, desc, youtube_url, github_url }) {
   return (
     <>
       <div className="project">
-        <h3>{title}</h3>
-        <p>{desc}</p>
-        <div className="project_container">
-          <div className="project_box center">
-            <a href={youtube_url} target="_blank" className="proj_link">
-              Walkthrough
-              <img
-                src="/images/new_tab.svg"
-                alt="New window icon by Grand Iconic - Flaticon"
-                className="new_tab_icon"
-              />
-            </a>
-          </div>
-          <div className="project_box center divider">
-            <a href={github_url} target="_blank" className="proj_link">
-              Source Code
-              <img
-                src="/images/new_tab.svg"
-                alt="New window icon by Grand Iconic - Flaticon"
-                className="new_tab_icon"
-              />
-            </a>
+        <div className="thumbnail">
+          <img src="/images/no_image.jpeg" alt="no image" />
+        </div>
+        <div className="project_content">
+          <h3>{title}</h3>
+          <p>{desc}</p>
+          <div className="project_container">
+            <div className="project_box center">
+              <a href={youtube_url} target="_blank" className="proj_link">
+                Walkthrough
+                <img
+                  src="/images/new_tab.svg"
+                  alt="New window icon by Grand Iconic - Flaticon"
+                  className="new_tab_icon"
+                />
+              </a>
+            </div>
+            <div className="project_box center divider">
+              <a href={github_url} target="_blank" className="proj_link">
+                Source Code
+                <img
+                  src="/images/new_tab.svg"
+                  alt="New window icon by Grand Iconic - Flaticon"
+                  className="new_tab_icon"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
