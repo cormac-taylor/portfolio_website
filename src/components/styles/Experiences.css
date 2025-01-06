@@ -1,6 +1,12 @@
 /* Experiences.css */
-h2 {
+#experiences_title {
   font-size: xxx-large;
+  margin-bottom: 0px;
+}
+
+#experiences_desc {
+  font-size: 20px;
+  color: #afafaf;
 }
 
 #experiences_div {
@@ -14,11 +20,13 @@ h2 {
   padding: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
-  transition: transform 0.25s ease;
+  filter: brightness(0.732);
+  transition: all 0.25s ease;
 }
 
 .experience:hover {
   transform: scale(1.05);
+  filter: brightness(1);
 }
 
 .experience h3 {

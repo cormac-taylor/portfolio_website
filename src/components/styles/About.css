@@ -11,6 +11,7 @@
 .about_container p {
   font-size: 20px;
   margin-left: calc(300vw / 6);
+  color: #afafaf;
 }
 
 #portrait {

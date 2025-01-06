@@ -1,8 +1,8 @@
-import "./styles/Circuit.css";
+import "./styles/Circuit.css"
 import { useEffect, useRef, useState } from "react";
 import { euclideanDistance, getAngle } from "../utilities/index.js";
 
-const SPEED = 2.5;
+const SPEED = 8;
 const NUM_PARTICLES = 32;
 
 // https://codepen.io/WindOso/pen/PoXBYdb
@@ -57,7 +57,7 @@ function Circuit() {
           c.stroke();
 
           // change angle randomly
-          if (Math.random() < 0.128 && partical.num_updates % 8 === 0) {
+          if (Math.random() < 0.128 && partical.num_updates % 4 === 0) {
             let validAngles;
             if (partical.velocity.cur_angle === partical.velocity.init_angle) {
               validAngles = [

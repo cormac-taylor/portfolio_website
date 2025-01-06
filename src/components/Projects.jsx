@@ -5,7 +5,10 @@ function Projects() {
   return (
     <>
       <div id="projects_div">
-        <h2>Projects</h2>
+        <h2 id="projects_title">Projects</h2>
+        <p id="projects_desc">
+          Hover over a project to see the related skills.
+        </p>
         <Project
           title="Portfolio Website"
           desc="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis ac maximus massa posuere elit neque laoreet. Bibendum aliquam etiam nisi iaculis fames massa. "
@@ -37,7 +40,7 @@ function Projects() {
           github_url="https://github.com/cormac-taylor/sports_team_API_server"
         />
         <Project
-          title="Multiplayer Trivia Game"
+          title="Multiplayer Trivia"
           desc="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis ac maximus massa posuere elit neque laoreet. Bibendum aliquam etiam nisi iaculis fames massa. "
           youtube_url="https://www.youtube.com/@cormac-taylor"
           github_url="https://github.com/cormac-taylor/online_multiplayer_trivia_game"
@@ -75,7 +78,7 @@ function Project({ title, desc, youtube_url, github_url }) {
         <div className="project_container">
           <div className="project_box center">
             <a href={youtube_url} target="_blank" className="proj_link">
-              Video Showcase
+              Walkthrough
               <img
                 src="/images/new_tab.svg"
                 alt="New window icon by Grand Iconic - Flaticon"

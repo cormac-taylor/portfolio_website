@@ -7,7 +7,7 @@ function Skills() {
       <div>
         <div id="skills_div">
           <div>
-            <h2>The Foundation</h2>
+            <h2>Tool Belt</h2>
           </div>
         </div>
         <Info

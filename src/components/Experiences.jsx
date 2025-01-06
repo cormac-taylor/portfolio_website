@@ -5,14 +5,16 @@ function Experiences() {
   return (
     <>
       <div id="experiences_div">
-        <h2>Experience</h2>
+        <h2 id="experiences_title">Experience</h2>
+        <p id="experiences_desc">
+          Hover over an experience to see the related skills.
+        </p>
         <Experience
           company_logo="/images/stevens_logo.svg"
           title="Course Assistant"
           location="Hoboken, NJ"
           date="January 2024 - Present"
           desc="Proctoring exams and grading assignments on topics such as Turing Machines, computability, complexity classes, and reductions."
-          // desc="Proctoring exams. Grading assignments and exams related to Turing Machines, computability, complexity classes, and reductions."
         />
         <Experience
           company_logo="/images/jostrong_logo.svg"
@@ -48,8 +50,12 @@ function Experience({ company_logo, title, location, date, desc }) {
         <img src={company_logo} alt="Stevens Logo" />
         <h3>{title}</h3>
         <div className="experience_container">
-          <span className="experience_box">{location}</span>
-          <span className="experience_box">{date}</span>
+          <div className="experience_box left">
+            <span>{location}</span>
+          </div>
+          <div className="experience_box right">
+            <span>{date}</span>
+          </div>
         </div>
         <p>{desc}</p>
       </div>
