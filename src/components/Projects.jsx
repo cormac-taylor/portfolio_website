@@ -80,13 +80,13 @@ function Project({ title, desc, youtube_url, github_url }) {
         <div className="project_content">
           <h3>{title}</h3>
           <p>{desc}</p>
-          <div className="project_container">
-            <div className="project_box center">
-              <ExternalLink url={youtube_url} txt="Walkthrough" />
-            </div>
-            <div className="project_box center divider">
-              <ExternalLink url={github_url} txt="Source Code" />
-            </div>
+        </div>
+        <div className="project_container">
+          <div className="project_box center">
+            <ExternalLink url={youtube_url} txt="Walkthrough" />
+          </div>
+          <div className="project_box center divider">
+            <ExternalLink url={github_url} txt="Source Code" />
           </div>
         </div>
       </div>
