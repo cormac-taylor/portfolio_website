@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 import "./styles/Projects.css";
-import ExternalLink from "./ExternalLink";
+import { ExternalLink, RotatingGraph } from "./index.js";
 
 function Projects() {
   return (
     <>
+      <RotatingGraph />
       <div id="projects_div">
         <h2 id="projects_title">Recent Projects</h2>
         <p id="projects_desc">
@@ -15,7 +16,7 @@ function Projects() {
           alt="Screen shot of home page for this website"
           title="Portfolio Website"
           date="January 2025"
-          desc="You are admiring this right now! It's a collection of some of the best things I've made, so it's easy for you to parse."
+          desc="You're admiring it right now! It's a collection of some of the best things I've made, so it's easy for you to parse."
           youtube_url="https://www.youtube.com/@cormac-taylor"
           github_url="https://github.com/cormac-taylor/personal_website"
         />

@@ -61,7 +61,7 @@ function RotatingGraph() {
       target: "mongodb",
     },
     {
-      source: "javascript",
+      source: "react",
       target: "typescript",
     },
     {
@@ -126,6 +126,17 @@ function RotatingGraph() {
       target: "numpy",
     },
   ];
+
+  // const skills_subset = {
+  //   stevens: [],
+  //   jostrong: ["react", "typescript", "mongodb", "git"],
+  //   td: ["spring", "java"],
+  //   portfolio_website: ["react", "css", "javascript", "git"],
+  //   variable_neural_network: ["python", "jupyter", "pandas", "numpy"],
+  //   full_stack_web_app: ["html", "css", "javascript", "mongodb", "git"],
+  //   mini_chat_app: ["erlang"],
+  //   crud_api_server: ["javascript", "mongodb"],
+  // };
 
   const graphData = {
     nodes: [

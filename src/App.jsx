@@ -1,7 +1,7 @@
 import "./global.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import { Header, Footer, Popup, RotatingGraph } from "./components/index.js";
+import { Header, Footer, Popup } from "./components/index.js";
 import Home from "./pages/Home.jsx";
 
 function App() {
@@ -25,7 +25,6 @@ function App() {
           }}
         />
       )}
-      <RotatingGraph />
       <BrowserRouter>
         <Header />
         <Routes>

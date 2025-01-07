@@ -21,8 +21,8 @@ function About() {
             </p>
             <p>
               Currently, I&apos;m an Algorithmic Complexity course assistant at
-              Stevens. In July, I&apos;ll be joining a full
-              time rotational program.
+              Stevens. In July, I&apos;ll be joining a full time rotational
+              program in New York City!
             </p>
           </div>
         </div>
