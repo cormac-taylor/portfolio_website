@@ -1,5 +1,5 @@
-/* Network.css */
-#skills_network {
+/* RotatingGraph.css */
+#skills_graph {
   width: calc(700vw / 12);
   height: 100vh;
   z-index: -200;

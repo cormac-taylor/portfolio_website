@@ -1,10 +1,10 @@
-import "./styles/Network.css";
+import "./styles/RotatingGraph.css";
 import { useEffect, useRef } from "react";
 import ForceGraph3D from "react-force-graph-3d";
 import * as THREE from "three";
 const VIEW_WIDTH = 7 / 12;
 
-function Network() {
+function RotatingGraph() {
   const graphRef = useRef();
 
   useEffect(() => {
@@ -197,7 +197,7 @@ function Network() {
   };
   return (
     <>
-      <div id="skills_network">
+      <div id="skills_graph">
         <ForceGraph3D
           ref={graphRef}
           graphData={graphData}
@@ -214,4 +214,4 @@ function Network() {
   );
 }
 
-export default Network;
+export default RotatingGraph;
