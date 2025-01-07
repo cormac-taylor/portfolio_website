@@ -7,9 +7,15 @@ const VIEW_WIDTH = 7 / 12;
 function Network() {
   const graphRef = useRef();
 
+  useEffect(() => {
+    if (graphRef.current) {
+      graphRef.current.d3Force("link").distance(60); // Adjust link length
+    }
+  }, []);
+
   // https://github.com/vasturiano/react-force-graph/blob/master/example/camera-auto-orbit/index.html
-  const DISTANCE = 500;
-  const SPEED = 0.003;
+  const DISTANCE = 625;
+  const SPEED = 0.002;
   useEffect(() => {
     graphRef.current.cameraPosition({ z: DISTANCE });
 
@@ -32,7 +38,7 @@ function Network() {
     imgTexture.colorSpace = THREE.SRGBColorSpace;
     const material = new THREE.SpriteMaterial({ map: imgTexture });
     const sprite = new THREE.Sprite(material);
-    sprite.scale.set(20, 20);
+    sprite.scale.set(32, 32);
 
     return sprite;
   };

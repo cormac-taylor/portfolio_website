@@ -2,6 +2,7 @@
 .footer_container {
   z-index: 900;
   background-color: rgba(16, 16, 16, 0.8);
+  backdrop-filter: blur(4px);
 }
 
 #footer_content {
