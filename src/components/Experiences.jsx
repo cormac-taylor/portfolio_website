@@ -7,7 +7,7 @@ function Experiences() {
       <div id="experiences_div">
         <h2 id="experiences_title">Experience</h2>
         <p id="experiences_desc">
-          Hover over an experience to see the related skills.
+          Hover over an experience to see the tools involved.
         </p>
         <Experience
           company_logo="/images/experiences/stevens_logo.svg"

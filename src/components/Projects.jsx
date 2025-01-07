@@ -6,9 +6,9 @@ function Projects() {
   return (
     <>
       <div id="projects_div">
-        <h2 id="projects_title">Projects</h2>
+        <h2 id="projects_title">Recent Projects</h2>
         <p id="projects_desc">
-          Hover over a project to see the related skills.
+          Hover over a project to see the tools involved.
         </p>
         <Project
           src="/images/projects/portfolio_website.png"
@@ -47,15 +47,15 @@ function Projects() {
           github_url="https://github.com/cormac-taylor/chat_app"
         />
         <Project
-          src="/images/no_image.jpeg"
+          src="/images/projects/crud_api_server.png"
           alt="no image"
           title="CRUD API Server"
           date="October 2024"
-          desc="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis ac maximus massa posuere elit neque laoreet. Bibendum aliquam etiam nisi iaculis fames massa. "
-          youtube_url="https://www.youtube.com/@cormac-taylor"
+          desc="A simple CRUD (Create, Read, Update, and Delete) API server for managing sport teams' roster and game data."
+          youtube_url="https://youtu.be/stBiSaHK8WU"
           github_url="https://github.com/cormac-taylor/sports_team_API_server"
         />
-        <Project
+        {/* <Project
           src="/images/no_image.jpeg"
           alt="no image"
           title="File System"
@@ -64,7 +64,6 @@ function Projects() {
           youtube_url="https://www.youtube.com/@cormac-taylor"
           github_url="https://github.com/cormac-taylor/file_system"
         />
-
         <Project
           src="/images/no_image.jpeg"
           alt="no image"
@@ -100,12 +99,12 @@ function Projects() {
           desc="Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis ac maximus massa posuere elit neque laoreet. Bibendum aliquam etiam nisi iaculis fames massa. "
           youtube_url="https://www.youtube.com/@cormac-taylor"
           github_url="https://github.com/cormac-taylor/custom_cpu_and_assembler"
-        />
+        /> */}
       </div>
     </>
   );
 }
-// https://www.youtube.com/@cormac-taylor
+
 Project.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
