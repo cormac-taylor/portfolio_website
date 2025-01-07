@@ -7,8 +7,9 @@ const VIEW_WIDTH = 7 / 12;
 function Network() {
   const graphRef = useRef();
 
-  const DISTANCE = 300;
-  const SPEED = 0.004;
+  // https://github.com/vasturiano/react-force-graph/blob/master/example/camera-auto-orbit/index.html
+  const DISTANCE = 500;
+  const SPEED = 0.003;
   useEffect(() => {
     graphRef.current.cameraPosition({ z: DISTANCE });
 
@@ -23,53 +24,170 @@ function Network() {
     }, 10);
   }, []);
 
-  const setNodeToImage = ({ img }) => {
-    const imgTexture = new THREE.TextureLoader().load(img);
+  // https://github.com/vasturiano/react-force-graph/blob/master/example/img-nodes/index.html
+  const setNodeToImage = ({ id }) => {
+    const imgTexture = new THREE.TextureLoader().load(
+      `/images/skills_logos/${id}.svg`
+    );
     imgTexture.colorSpace = THREE.SRGBColorSpace;
     const material = new THREE.SpriteMaterial({ map: imgTexture });
     const sprite = new THREE.Sprite(material);
-    sprite.scale.set(12, 12);
+    sprite.scale.set(20, 20);
 
     return sprite;
   };
 
+  const web_dev = [
+    {
+      source: "git",
+      target: "javascript",
+    },
+    {
+      source: "javascript",
+      target: "html5",
+    },
+    {
+      source: "javascript",
+      target: "css3",
+    },
+    {
+      source: "javascript",
+      target: "mongodb",
+    },
+    {
+      source: "javascript",
+      target: "typescript",
+    },
+    {
+      source: "javascript",
+      target: "react",
+    },
+    {
+      source: "html5",
+      target: "css3",
+    },
+    {
+      source: "mongodb",
+      target: "postgresql",
+    },
+  ];
+
+  const systems = [
+    {
+      source: "c",
+      target: "bash",
+    },
+    {
+      source: "c",
+      target: "cplusplus",
+    },
+    {
+      source: "c",
+      target: "debian",
+    },
+  ];
+
+  const java_and_concurrency = [
+    {
+      source: "java",
+      target: "spring",
+    },
+    {
+      source: "java",
+      target: "groovy",
+    },
+    {
+      source: "groovy",
+      target: "erlang",
+    },
+    {
+      source: "erlang",
+      target: "ocaml",
+    },
+  ];
+
+  const ml = [
+    {
+      source: "python",
+      target: "jupyter",
+    },
+    {
+      source: "jupyter",
+      target: "pandas",
+    },
+    {
+      source: "jupyter",
+      target: "numpy",
+    },
+  ];
+
   const graphData = {
     nodes: [
       {
-        id: "id1",
-        img: "/images/logo.svg",
+        id: "bash",
       },
       {
-        id: "id2",
-        img: "/images/logo.svg",
+        id: "c",
       },
       {
-        id: "id3",
-        img: "/images/logo.svg",
+        id: "cplusplus",
       },
       {
-        id: "id4",
-        img: "/images/logo.svg",
+        id: "css3",
       },
       {
-        id: "id5",
-        img: "/images/logo.svg",
+        id: "debian",
+      },
+      {
+        id: "erlang",
+      },
+      {
+        id: "git",
+      },
+      {
+        id: "groovy",
+      },
+      {
+        id: "html5",
+      },
+      {
+        id: "java",
+      },
+      {
+        id: "javascript",
+      },
+      {
+        id: "jupyter",
+      },
+      {
+        id: "mongodb",
+      },
+      {
+        id: "numpy",
+      },
+      {
+        id: "ocaml",
+      },
+      {
+        id: "pandas",
+      },
+      {
+        id: "postgresql",
+      },
+      {
+        id: "python",
+      },
+      {
+        id: "react",
+      },
+      {
+        id: "spring",
+      },
+      {
+        id: "typescript",
       },
     ],
-    links: [
-      {
-        source: "id1",
-        target: "id2",
-      },
-      {
-        source: "id5",
-        target: "id3",
-      },
-      {
-        source: "id3",
-        target: "id4",
-      },
-    ],
+    links: [web_dev, systems, java_and_concurrency, ml].flat(),
   };
   return (
     <>
