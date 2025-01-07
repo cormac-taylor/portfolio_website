@@ -12,7 +12,7 @@ function Skills() {
         </div>
         <Info
           infoTitle="Understanding the Background"
-          infoDesc="To be implemented..."
+          infoDesc="Here "
         />
       </div>
     </>
