@@ -1,4 +1,8 @@
 /* Lava.css */
+#lava_frame {
+  background-color: #101010;
+}
+
 #lava_canvas {
   filter: blur(8px);
 }

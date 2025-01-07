@@ -1,9 +1,9 @@
 /* Network.css */
 #skills_network {
-  width: 100vw;
+  width: calc(700vw / 12);
   height: 100vh;
   z-index: -200;
   position: fixed;
   top: 0;
-  left: 0;
+  left: calc(500vw / 12);
 }
