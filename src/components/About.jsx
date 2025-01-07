@@ -20,8 +20,8 @@ function About() {
               algorithms, machine learning, and web development.
             </p>
             <p>
-              Currently, I&apos;m a Algorithmic Complexity course assistant at
-              Stevens. In July, I&apos;ll be joining TD Securities&apos;s full
+              Currently, I&apos;m an Algorithmic Complexity course assistant at
+              Stevens. In July, I&apos;ll be joining a full
               time rotational program.
             </p>
           </div>

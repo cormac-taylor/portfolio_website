@@ -22,6 +22,7 @@
 
 #portrait img {
   width: calc(500vw / 12);
+  max-height: 90%;
 }
 
 .tub {

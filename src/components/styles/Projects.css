@@ -76,6 +76,10 @@
   justify-content: center;
 }
 
+.project_box a {
+  border: 1px solid #effeef;
+}
+
 .divider {
   border-left: 1px solid #efefef;
 }
