@@ -1,40 +1,93 @@
 import "./styles/Network.css";
-
-import * as THREE from "three";
 import { useEffect, useRef } from "react";
-
+import ForceGraph3D from "react-force-graph-3d";
+import * as THREE from "three";
 const VIEW_WIDTH = 7 / 12;
 
-// https://dev.to/omher/how-to-start-using-react-and-threejs-in-a-few-minutes-2h6g
 function Network() {
-  const refContainer = useRef(null);
+  const graphRef = useRef();
+
+  const DISTANCE = 300;
+  const SPEED = 0.004;
   useEffect(() => {
-    var scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x101010);
-    var camera = new THREE.PerspectiveCamera(
-      75,
-      (window.innerWidth * VIEW_WIDTH) / window.innerHeight,
-      0.1,
-      1000
-    );
-    var renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth * VIEW_WIDTH, window.innerHeight);
-    refContainer.current &&
-      refContainer.current.appendChild(renderer.domElement);
-    var geometry = new THREE.BoxGeometry(1, 1, 1);
-    var material = new THREE.MeshBasicMaterial({ color: 0x3998fc });
-    var cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-    camera.position.z = 5;
-    var animate = function () {
-      requestAnimationFrame(animate);
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-      renderer.render(scene, camera);
-    };
-    animate();
+    graphRef.current.cameraPosition({ z: DISTANCE });
+
+    // camera orbit
+    let angle = 0;
+    setInterval(() => {
+      graphRef.current.cameraPosition({
+        x: DISTANCE * Math.sin(angle),
+        z: DISTANCE * Math.cos(angle),
+      });
+      angle += SPEED;
+    }, 10);
   }, []);
-  return <div id="skills_network" ref={refContainer}></div>;
+
+  const setNodeToImage = ({ img }) => {
+    const imgTexture = new THREE.TextureLoader().load(img);
+    imgTexture.colorSpace = THREE.SRGBColorSpace;
+    const material = new THREE.SpriteMaterial({ map: imgTexture });
+    const sprite = new THREE.Sprite(material);
+    sprite.scale.set(12, 12);
+
+    return sprite;
+  };
+
+  const graphData = {
+    nodes: [
+      {
+        id: "id1",
+        img: "/images/logo.svg",
+      },
+      {
+        id: "id2",
+        img: "/images/logo.svg",
+      },
+      {
+        id: "id3",
+        img: "/images/logo.svg",
+      },
+      {
+        id: "id4",
+        img: "/images/logo.svg",
+      },
+      {
+        id: "id5",
+        img: "/images/logo.svg",
+      },
+    ],
+    links: [
+      {
+        source: "id1",
+        target: "id2",
+      },
+      {
+        source: "id5",
+        target: "id3",
+      },
+      {
+        source: "id3",
+        target: "id4",
+      },
+    ],
+  };
+  return (
+    <>
+      <div id="skills_network">
+        <ForceGraph3D
+          ref={graphRef}
+          graphData={graphData}
+          width={window.innerWidth * VIEW_WIDTH}
+          height={window.innerHeight}
+          backgroundColor={"#101010"}
+          showNavInfo={false}
+          nodeThreeObject={setNodeToImage}
+          linkColor={() => "#efefef"}
+          linkOpacity={1}
+        />
+      </div>
+    </>
+  );
 }
 
 export default Network;
