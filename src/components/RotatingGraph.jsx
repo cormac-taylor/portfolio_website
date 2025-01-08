@@ -17,7 +17,7 @@ const SKILLS_SUBSETS = {
 };
 
 RotatingGraph.propTypes = {
-  skillSubset: PropTypes.string.isRequired,
+  skillSubset: PropTypes.string,
 };
 
 function RotatingGraph({ skillSubset }) {
