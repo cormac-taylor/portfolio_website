@@ -7,7 +7,7 @@ import * as THREE from "three";
 const VIEW_WIDTH = 7 / 12;
 const SKILLS_SUBSETS = {
   stevens: [],
-  jostrong: ["react", "typescript", "mongodb", "git"],
+  jostrong: ["react", "typescript", "css", "mongodb", "git"],
   td: ["spring", "java"],
   portfolio_website: ["react", "css", "javascript", "git"],
   variable_neural_network: ["python", "jupyter", "pandas", "numpy"],
