@@ -5,7 +5,7 @@ import ForceGraph3D from "react-force-graph-3d";
 import * as THREE from "three";
 
 const VIEW_WIDTH = 7 / 12;
-const SKILLS_SUBSET = {
+const SKILLS_SUBSETS = {
   stevens: [],
   jostrong: ["react", "typescript", "mongodb", "git"],
   td: ["spring", "java"],
@@ -17,10 +17,10 @@ const SKILLS_SUBSET = {
 };
 
 RotatingGraph.propTypes = {
-  subset: PropTypes.string.isRequired,
+  skillSubset: PropTypes.string.isRequired,
 };
 
-function RotatingGraph({ subset }) {
+function RotatingGraph({ skillSubset }) {
   const graphRef = useRef();
 
   useEffect(() => {
@@ -52,8 +52,8 @@ function RotatingGraph({ subset }) {
       `/images/skills_logos/${id}.svg`
     );
     imgTexture.colorSpace = THREE.SRGBColorSpace;
-    const color = subset
-      ? SKILLS_SUBSET[subset].includes(id)
+    const color = skillSubset
+      ? SKILLS_SUBSETS[skillSubset].includes(id)
         ? "#3998fc"
         : "#efefef"
       : "#efefef";
@@ -71,11 +71,11 @@ function RotatingGraph({ subset }) {
     },
     {
       source: "javascript",
-      target: "html5",
+      target: "html",
     },
     {
       source: "javascript",
-      target: "css3",
+      target: "css",
     },
     {
       source: "javascript",
@@ -90,8 +90,8 @@ function RotatingGraph({ subset }) {
       target: "react",
     },
     {
-      source: "html5",
-      target: "css3",
+      source: "html",
+      target: "css",
     },
     {
       source: "mongodb",
@@ -160,7 +160,7 @@ function RotatingGraph({ subset }) {
         id: "cplusplus",
       },
       {
-        id: "css3",
+        id: "css",
       },
       {
         id: "debian",
@@ -175,7 +175,7 @@ function RotatingGraph({ subset }) {
         id: "groovy",
       },
       {
-        id: "html5",
+        id: "html",
       },
       {
         id: "java",

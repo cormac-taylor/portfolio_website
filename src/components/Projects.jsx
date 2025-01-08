@@ -1,22 +1,22 @@
 import "./styles/Projects.css";
 import PropTypes from "prop-types";
-import { ExternalLink, RotatingGraph } from "./index.js";
-import { useState } from "react";
+import { ExternalLink } from "./index.js";
 
-function Projects() {
-  /* 
-  TO DO 
-  */
-  const [subset, setSubset] = useState(null);
+Projects.propTypes = {
+  setSkillSubset: PropTypes.func.isRequired,
+};
+
+function Projects({ setSkillSubset }) {
   return (
     <>
-      <RotatingGraph subset={subset} />
       <div id="projects_div">
         <h2 id="projects_title">Recent Projects</h2>
         <p id="projects_desc">
           Hover over a project to see the tools involved.
         </p>
         <Project
+          setToSubset={() => setSkillSubset("portfolio_website")}
+          resetSubset={() => setSkillSubset(null)}
           src="/images/projects/portfolio_website.png"
           alt="Screen shot of home page for this website"
           title="Portfolio Website"
@@ -26,6 +26,8 @@ function Projects() {
           github_url="https://github.com/cormac-taylor/personal_website"
         />
         <Project
+          setToSubset={() => setSkillSubset("variable_neural_network")}
+          resetSubset={() => setSkillSubset(null)}
           src="/images/projects/variable_neural_network.png"
           alt="Image of a neural network diagram"
           title="Variable Neural Network"
@@ -35,6 +37,8 @@ function Projects() {
           github_url="https://github.com/cormac-taylor/neural_network"
         />
         <Project
+          setToSubset={() => setSkillSubset("full_stack_web_app")}
+          resetSubset={() => setSkillSubset(null)}
           src="/images/projects/full_stack_web_app.png"
           alt="Screen shot of home page for the Full Stack Web App"
           title="Full Stack Web App"
@@ -44,6 +48,8 @@ function Projects() {
           github_url="https://github.com/cormac-taylor/cs546_group22_final_project"
         />
         <Project
+          setToSubset={() => setSkillSubset("mini_chat_app")}
+          resetSubset={() => setSkillSubset(null)}
           src="/images/projects/mini_chat_room.png"
           alt="no image"
           title="Mini Chat App"
@@ -53,6 +59,8 @@ function Projects() {
           github_url="https://github.com/cormac-taylor/chat_app"
         />
         <Project
+          setToSubset={() => setSkillSubset("crud_api_server")}
+          resetSubset={() => setSkillSubset(null)}
           src="/images/projects/crud_api_server.png"
           alt="no image"
           title="CRUD API Server"
@@ -112,6 +120,8 @@ function Projects() {
 }
 
 Project.propTypes = {
+  setToSubset: PropTypes.func.isRequired,
+  resetSubset: PropTypes.func.isRequired,
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
@@ -121,10 +131,20 @@ Project.propTypes = {
   github_url: PropTypes.string.isRequired,
 };
 
-function Project({ src, alt, title, date, desc, youtube_url, github_url }) {
+function Project({
+  setToSubset,
+  resetSubset,
+  src,
+  alt,
+  title,
+  date,
+  desc,
+  youtube_url,
+  github_url,
+}) {
   return (
     <>
-      <div className="project">
+      <div className="project" onMouseOver={setToSubset} onMouseOut={resetSubset}>
         <div className="thumbnail">
           <img src={src} alt={alt} />
         </div>

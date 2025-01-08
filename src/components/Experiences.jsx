@@ -1,7 +1,11 @@
-import PropTypes from "prop-types";
 import "./styles/Experiences.css";
+import PropTypes from "prop-types";
 
-function Experiences() {
+Experiences.propTypes = {
+  setSkillSubset: PropTypes.func.isRequired,
+};
+
+function Experiences({ setSkillSubset }) {
   return (
     <>
       <div id="experiences_div">
@@ -10,13 +14,17 @@ function Experiences() {
           Hover over an experience to see the tools involved.
         </p>
         <Experience
+          setToSubset={() => setSkillSubset("stevens")}
+          resetSubset={() => setSkillSubset(null)}
           company_logo="/images/experiences/stevens_logo.svg"
           title="Course Assistant"
           location="Hoboken, NJ"
           date="January 2024 - Present"
-          desc="Proctoring exams and grading assignments on topics such as Turing Machines, computability, complexity classes, and reductions."
+          desc="Proctoring exams and grading assignments on theory topics like Turing Machines, computability, complexity, and reductions."
         />
         <Experience
+          setToSubset={() => setSkillSubset("jostrong")}
+          resetSubset={() => setSkillSubset(null)}
           company_logo="/images/experiences/jostrong_logo.svg"
           title="Lead Developer"
           location="Hoboken, NJ"
@@ -24,6 +32,8 @@ function Experiences() {
           desc="Developing a full-stack CRM-style web app for a fitness coach to improve efficiency and automate processes."
         />
         <Experience
+          setToSubset={() => setSkillSubset("td")}
+          resetSubset={() => setSkillSubset(null)}
           company_logo="/images/experiences/td_securities_logo.svg"
           title="Software Engineer Intern"
           location="New York, NY"
@@ -36,6 +46,8 @@ function Experiences() {
 }
 
 Experience.propTypes = {
+  setToSubset: PropTypes.func.isRequired,
+  resetSubset: PropTypes.func.isRequired,
   company_logo: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
@@ -43,10 +55,18 @@ Experience.propTypes = {
   desc: PropTypes.string.isRequired,
 };
 
-function Experience({ company_logo, title, location, date, desc }) {
+function Experience({
+  setToSubset,
+  resetSubset,
+  company_logo,
+  title,
+  location,
+  date,
+  desc,
+}) {
   return (
     <>
-      <div className="experience">
+      <div className="experience" onMouseOver={setToSubset} onMouseOut={resetSubset}>
         <img src={company_logo} alt="Stevens Logo" />
         <h3>{title}</h3>
         <div className="experience_container">

@@ -8,6 +8,7 @@ import {
   Skills,
   Experiences,
   Projects,
+  RotatingGraph,
 } from "../components/index.js";
 
 Home.propTypes = {
@@ -17,6 +18,7 @@ Home.propTypes = {
 
 function Home({ startTyping, setStartTyping }) {
   const [resetTypingEffect, setResetTypingEffect] = useState(false);
+  const [skillSubset, setSkillSubset] = useState(null);
 
   const location = useLocation();
 
@@ -31,6 +33,7 @@ function Home({ startTyping, setStartTyping }) {
 
   return (
     <>
+      <RotatingGraph skillSubset={skillSubset} />
       <section className="full_screen_section">
         <Landing
           startTyping={startTyping}
@@ -47,8 +50,8 @@ function Home({ startTyping, setStartTyping }) {
         <Skills />
       </section>
       <section>
-        <Experiences />
-        <Projects />
+        <Experiences setSkillSubset={setSkillSubset} />
+        <Projects setSkillSubset={setSkillSubset} />
       </section>
     </>
   );
