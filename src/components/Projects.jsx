@@ -1,11 +1,16 @@
-import PropTypes from "prop-types";
 import "./styles/Projects.css";
+import PropTypes from "prop-types";
 import { ExternalLink, RotatingGraph } from "./index.js";
+import { useState } from "react";
 
 function Projects() {
+  /* 
+  TO DO 
+  */
+  const [subset, setSubset] = useState(null);
   return (
     <>
-      <RotatingGraph />
+      <RotatingGraph subset={subset} />
       <div id="projects_div">
         <h2 id="projects_title">Recent Projects</h2>
         <p id="projects_desc">

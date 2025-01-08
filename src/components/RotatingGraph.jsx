@@ -1,10 +1,26 @@
 import "./styles/RotatingGraph.css";
 import { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 import ForceGraph3D from "react-force-graph-3d";
 import * as THREE from "three";
-const VIEW_WIDTH = 7 / 12;
 
-function RotatingGraph() {
+const VIEW_WIDTH = 7 / 12;
+const SKILLS_SUBSET = {
+  stevens: [],
+  jostrong: ["react", "typescript", "mongodb", "git"],
+  td: ["spring", "java"],
+  portfolio_website: ["react", "css", "javascript", "git"],
+  variable_neural_network: ["python", "jupyter", "pandas", "numpy"],
+  full_stack_web_app: ["html", "css", "javascript", "mongodb", "git"],
+  mini_chat_app: ["erlang"],
+  crud_api_server: ["javascript", "mongodb"],
+};
+
+RotatingGraph.propTypes = {
+  subset: PropTypes.string.isRequired,
+};
+
+function RotatingGraph({ subset }) {
   const graphRef = useRef();
 
   useEffect(() => {
@@ -36,7 +52,12 @@ function RotatingGraph() {
       `/images/skills_logos/${id}.svg`
     );
     imgTexture.colorSpace = THREE.SRGBColorSpace;
-    const material = new THREE.SpriteMaterial({ map: imgTexture });
+    const color = subset
+      ? SKILLS_SUBSET[subset].includes(id)
+        ? "#3998fc"
+        : "#efefef"
+      : "#efefef";
+    const material = new THREE.SpriteMaterial({ map: imgTexture, color });
     const sprite = new THREE.Sprite(material);
     sprite.scale.set(32, 32);
 
@@ -126,17 +147,6 @@ function RotatingGraph() {
       target: "numpy",
     },
   ];
-
-  // const skills_subset = {
-  //   stevens: [],
-  //   jostrong: ["react", "typescript", "mongodb", "git"],
-  //   td: ["spring", "java"],
-  //   portfolio_website: ["react", "css", "javascript", "git"],
-  //   variable_neural_network: ["python", "jupyter", "pandas", "numpy"],
-  //   full_stack_web_app: ["html", "css", "javascript", "mongodb", "git"],
-  //   mini_chat_app: ["erlang"],
-  //   crud_api_server: ["javascript", "mongodb"],
-  // };
 
   const graphData = {
     nodes: [
