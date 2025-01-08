@@ -22,18 +22,44 @@
 
 #portrait img {
   max-width: calc(500vw / 12);
-  min-height: 80vh;
-  max-height: 90vh;
-}
-
-@media (orientation: portrait) {
-  #portrait img {
-    display: none;
-  }
+  min-height: 85vh;
+  max-height: 95vh;
 }
 
 .tub {
   display: flex;
   align-items: center;
   height: 100vh;
+}
+
+@media (orientation: portrait) {
+  .about_container {
+    margin-right: 0;
+  }
+
+  .about_container h2 {
+    margin-left: 0;
+  }
+
+  .about_container p {
+    margin-left: 0;
+  }
+
+  #portrait {
+    left: 0;
+  }
+
+  #portrait img {
+    display: none;
+  }
+
+  .left {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .right {
+    text-align: center;
+    justify-content: center;
+  }
 }

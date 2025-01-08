@@ -36,3 +36,10 @@
 .nav_img:hover {
   transform: scale(1.6);
 }
+
+@media (orientation: portrait) {
+  #nav_content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

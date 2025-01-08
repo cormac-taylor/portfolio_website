@@ -43,3 +43,28 @@
     border-color: transparent;
   }
 }
+
+@media (orientation: portrait) {
+  #landing_container {
+    margin-left: 12.5vw;
+    margin-right: 12.5vw;
+  }
+
+  #landing_title {
+    font-size: 48px;
+  }
+
+  #landing_description {
+    width: 87.5vw;
+  }
+
+  .left {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .right {
+    text-align: center;
+    justify-content: center;
+  }
+}

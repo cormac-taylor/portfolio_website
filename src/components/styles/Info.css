@@ -29,3 +29,9 @@
 .info_content p {
   font-size: medium;
 }
+
+@media (orientation: portrait) {
+  .info_content {
+    width: calc(100vw - 70px);
+  }
+}
