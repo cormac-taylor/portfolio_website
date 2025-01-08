@@ -1,5 +1,5 @@
 import "./styles/RotatingGraph.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import ForceGraph3D from "react-force-graph-3d";
 import * as THREE from "three";
@@ -16,12 +16,187 @@ const SKILLS_SUBSETS = {
   crud_api_server: ["javascript", "mongodb"],
 };
 
+const web_dev = [
+  {
+    source: "git",
+    target: "javascript",
+  },
+  {
+    source: "javascript",
+    target: "html",
+  },
+  {
+    source: "javascript",
+    target: "css",
+  },
+  {
+    source: "javascript",
+    target: "mongodb",
+  },
+  {
+    source: "react",
+    target: "typescript",
+  },
+  {
+    source: "javascript",
+    target: "react",
+  },
+  {
+    source: "html",
+    target: "css",
+  },
+  {
+    source: "mongodb",
+    target: "postgresql",
+  },
+];
+
+const systems = [
+  {
+    source: "c",
+    target: "bash",
+  },
+  {
+    source: "c",
+    target: "cplusplus",
+  },
+  {
+    source: "c",
+    target: "debian",
+  },
+];
+
+const java_and_concurrency = [
+  {
+    source: "java",
+    target: "spring",
+  },
+  {
+    source: "java",
+    target: "groovy",
+  },
+  {
+    source: "groovy",
+    target: "erlang",
+  },
+  {
+    source: "erlang",
+    target: "ocaml",
+  },
+];
+
+const ml = [
+  {
+    source: "python",
+    target: "jupyter",
+  },
+  {
+    source: "jupyter",
+    target: "pandas",
+  },
+  {
+    source: "jupyter",
+    target: "numpy",
+  },
+];
+
+const initGraphData = {
+  nodes: [
+    {
+      id: "bash",
+      color: "#efefef",
+    },
+    {
+      id: "c",
+      color: "#efefef",
+    },
+    {
+      id: "cplusplus",
+      color: "#efefef",
+    },
+    {
+      id: "css",
+      color: "#efefef",
+    },
+    {
+      id: "debian",
+      color: "#efefef",
+    },
+    {
+      id: "erlang",
+      color: "#efefef",
+    },
+    {
+      id: "git",
+      color: "#efefef",
+    },
+    {
+      id: "groovy",
+      color: "#efefef",
+    },
+    {
+      id: "html",
+      color: "#efefef",
+    },
+    {
+      id: "java",
+      color: "#efefef",
+    },
+    {
+      id: "javascript",
+      color: "#efefef",
+    },
+    {
+      id: "jupyter",
+      color: "#efefef",
+    },
+    {
+      id: "mongodb",
+      color: "#efefef",
+    },
+    {
+      id: "numpy",
+      color: "#efefef",
+    },
+    {
+      id: "ocaml",
+      color: "#efefef",
+    },
+    {
+      id: "pandas",
+      color: "#efefef",
+    },
+    {
+      id: "postgresql",
+      color: "#efefef",
+    },
+    {
+      id: "python",
+      color: "#efefef",
+    },
+    {
+      id: "react",
+      color: "#efefef",
+    },
+    {
+      id: "spring",
+      color: "#efefef",
+    },
+    {
+      id: "typescript",
+      color: "#efefef",
+    },
+  ],
+  links: [web_dev, systems, java_and_concurrency, ml].flat(),
+};
+
 RotatingGraph.propTypes = {
   skillSubset: PropTypes.string,
 };
 
 function RotatingGraph({ skillSubset }) {
   const graphRef = useRef();
+  const [graphData, setGraphData] = useState(initGraphData);
 
   useEffect(() => {
     if (graphRef.current) {
@@ -46,175 +221,38 @@ function RotatingGraph({ skillSubset }) {
     }, 10);
   }, []);
 
+  useEffect(() => {
+    if (skillSubset) {
+      const updatedNodes = graphData.nodes.map((node) => {
+        const color = SKILLS_SUBSETS[skillSubset].includes(node.id)
+          ? "#3998fc"
+          : "#efefef";
+        node["color"] = color;
+        return node;
+      });
+      graphData["nodes"] = updatedNodes;
+      setGraphData(graphData);
+    } else {
+      const updatedNodes = graphData.nodes.map((node) => {
+        node["color"] = "#efefef";
+        return node;
+      });
+      graphData["nodes"] = updatedNodes;
+      setGraphData(graphData);
+    }
+  }, [skillSubset]);
+
   // https://github.com/vasturiano/react-force-graph/blob/master/example/img-nodes/index.html
-  const setNodeToImage = ({ id }) => {
+  const setNodeToImage = ({ id, color }) => {
     const imgTexture = new THREE.TextureLoader().load(
       `/images/skills_logos/${id}.svg`
     );
     imgTexture.colorSpace = THREE.SRGBColorSpace;
-    const color = skillSubset
-      ? SKILLS_SUBSETS[skillSubset].includes(id)
-        ? "#3998fc"
-        : "#efefef"
-      : "#efefef";
     const material = new THREE.SpriteMaterial({ map: imgTexture, color });
     const sprite = new THREE.Sprite(material);
     sprite.scale.set(32, 32);
 
     return sprite;
-  };
-
-  const web_dev = [
-    {
-      source: "git",
-      target: "javascript",
-    },
-    {
-      source: "javascript",
-      target: "html",
-    },
-    {
-      source: "javascript",
-      target: "css",
-    },
-    {
-      source: "javascript",
-      target: "mongodb",
-    },
-    {
-      source: "react",
-      target: "typescript",
-    },
-    {
-      source: "javascript",
-      target: "react",
-    },
-    {
-      source: "html",
-      target: "css",
-    },
-    {
-      source: "mongodb",
-      target: "postgresql",
-    },
-  ];
-
-  const systems = [
-    {
-      source: "c",
-      target: "bash",
-    },
-    {
-      source: "c",
-      target: "cplusplus",
-    },
-    {
-      source: "c",
-      target: "debian",
-    },
-  ];
-
-  const java_and_concurrency = [
-    {
-      source: "java",
-      target: "spring",
-    },
-    {
-      source: "java",
-      target: "groovy",
-    },
-    {
-      source: "groovy",
-      target: "erlang",
-    },
-    {
-      source: "erlang",
-      target: "ocaml",
-    },
-  ];
-
-  const ml = [
-    {
-      source: "python",
-      target: "jupyter",
-    },
-    {
-      source: "jupyter",
-      target: "pandas",
-    },
-    {
-      source: "jupyter",
-      target: "numpy",
-    },
-  ];
-
-  const graphData = {
-    nodes: [
-      {
-        id: "bash",
-      },
-      {
-        id: "c",
-      },
-      {
-        id: "cplusplus",
-      },
-      {
-        id: "css",
-      },
-      {
-        id: "debian",
-      },
-      {
-        id: "erlang",
-      },
-      {
-        id: "git",
-      },
-      {
-        id: "groovy",
-      },
-      {
-        id: "html",
-      },
-      {
-        id: "java",
-      },
-      {
-        id: "javascript",
-      },
-      {
-        id: "jupyter",
-      },
-      {
-        id: "mongodb",
-      },
-      {
-        id: "numpy",
-      },
-      {
-        id: "ocaml",
-      },
-      {
-        id: "pandas",
-      },
-      {
-        id: "postgresql",
-      },
-      {
-        id: "python",
-      },
-      {
-        id: "react",
-      },
-      {
-        id: "spring",
-      },
-      {
-        id: "typescript",
-      },
-    ],
-    links: [web_dev, systems, java_and_concurrency, ml].flat(),
   };
   return (
     <>
@@ -227,6 +265,7 @@ function RotatingGraph({ skillSubset }) {
           backgroundColor={"#101010"}
           showNavInfo={false}
           nodeThreeObject={setNodeToImage}
+          nodeColor={(node) => node.color}
           linkColor={() => "#efefef"}
           linkOpacity={1}
         />
