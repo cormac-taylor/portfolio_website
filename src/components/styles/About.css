@@ -34,15 +34,15 @@
 
 @media (orientation: portrait) {
   .about_container {
-    margin-right: 0;
+    margin-right: 12.5vw;
   }
 
   .about_container h2 {
-    margin-left: 0;
+    margin-left: 12.5vw;
   }
 
   .about_container p {
-    margin-left: 0;
+    margin-left: 12.5vw;
   }
 
   #portrait {
