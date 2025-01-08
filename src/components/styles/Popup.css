@@ -47,3 +47,9 @@
   background-color: #afafaf;
   color: #101010;
 }
+
+@media (orientation: portrait) {
+  .popup_content {
+    max-width: calc(100vw - 70px);
+  }
+}
