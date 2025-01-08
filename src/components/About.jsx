@@ -1,8 +1,8 @@
 import "./styles/About.css";
-import { getAge } from "../utilities/index.js";
+import { getYears } from "../utilities/index.js";
 import { Info, Circuit } from "./index.js";
 
-const BIRTHDAY = "4/13/2004";
+const first_line = "9/1/2020";
 
 function About() {
   return (
@@ -14,7 +14,7 @@ function About() {
         </div>
         <div className="tub">
           <div className="about_container right">
-            <h2>A {getAge(new Date(BIRTHDAY))} year old studying CS.</h2>
+            <h2>{getYears(first_line)} years since my first line of code!</h2>
             <p>
               I&apos;m a computer science student with a strong foundation in
               algorithms, machine learning, and web development.
