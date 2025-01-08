@@ -21,8 +21,15 @@
 }
 
 #portrait img {
-  width: calc(500vw / 12);
-  max-height: 90%;
+  max-width: calc(500vw / 12);
+  min-height: 80vh;
+  max-height: 90vh;
+}
+
+@media (orientation: portrait) {
+  #portrait img {
+    display: none;
+  }
 }
 
 .tub {

@@ -192,34 +192,37 @@ const initGraphData = {
 
 RotatingGraph.propTypes = {
   skillSubset: PropTypes.string,
+  renderGraph: PropTypes.bool,
 };
 
-function RotatingGraph({ skillSubset }) {
+function RotatingGraph({ skillSubset, renderGraph }) {
   const graphRef = useRef();
   const [graphData, setGraphData] = useState(initGraphData);
 
   useEffect(() => {
     if (graphRef.current) {
-      graphRef.current.d3Force("link").distance(60); // Adjust link length
+      graphRef.current.d3Force("link").distance(70); // Adjust link length
     }
-  }, []);
+  }, [graphRef.current]);
 
   // https://github.com/vasturiano/react-force-graph/blob/master/example/camera-auto-orbit/index.html
   const DISTANCE = 625;
   const SPEED = 0.002;
   useEffect(() => {
-    graphRef.current.cameraPosition({ z: DISTANCE });
+    if (graphRef.current) {
+      graphRef.current.cameraPosition({ z: DISTANCE });
 
-    // camera orbit
-    let angle = 0;
-    setInterval(() => {
-      graphRef.current.cameraPosition({
-        x: DISTANCE * Math.sin(angle),
-        z: DISTANCE * Math.cos(angle),
-      });
-      angle += SPEED;
-    }, 10);
-  }, []);
+      // camera orbit
+      let angle = 0;
+      setInterval(() => {
+        graphRef.current.cameraPosition({
+          x: DISTANCE * Math.sin(angle),
+          z: DISTANCE * Math.cos(angle),
+        });
+        angle += SPEED;
+      }, 10);
+    }
+  }, [graphRef.current]);
 
   useEffect(() => {
     if (skillSubset) {
@@ -250,25 +253,27 @@ function RotatingGraph({ skillSubset }) {
     imgTexture.colorSpace = THREE.SRGBColorSpace;
     const material = new THREE.SpriteMaterial({ map: imgTexture, color });
     const sprite = new THREE.Sprite(material);
-    sprite.scale.set(32, 32);
+    sprite.scale.set(40, 40);
 
     return sprite;
   };
   return (
     <>
       <div id="skills_graph">
-        <ForceGraph3D
-          ref={graphRef}
-          graphData={graphData}
-          width={window.innerWidth * VIEW_WIDTH}
-          height={window.innerHeight}
-          backgroundColor={"#101010"}
-          showNavInfo={false}
-          nodeThreeObject={setNodeToImage}
-          nodeColor={(node) => node.color}
-          linkColor={() => "#efefef"}
-          linkOpacity={1}
-        />
+        {renderGraph && (
+          <ForceGraph3D
+            ref={graphRef}
+            graphData={graphData}
+            width={window.innerWidth * VIEW_WIDTH}
+            height={window.innerHeight}
+            backgroundColor={"#101010"}
+            showNavInfo={false}
+            nodeThreeObject={setNodeToImage}
+            nodeColor={(node) => node.color}
+            linkColor={() => "#efefef"}
+            linkOpacity={1}
+          />
+        )}
       </div>
     </>
   );

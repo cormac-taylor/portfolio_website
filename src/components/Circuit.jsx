@@ -18,7 +18,7 @@ function Circuit() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.4 }
     );
 
     if (canvasRef.current) {

@@ -10,7 +10,7 @@ function Skills() {
             <h2>Tool Belt</h2>
           </div>
         </div>
-        <Info infoTitle="Understanding the Background" infoDesc="It" />
+        <Info infoTitle="Understanding the Background" infoDesc="To do completed..." />
       </div>
     </>
   );
