@@ -83,3 +83,10 @@
 .divider {
   border-left: 1px solid #efefef;
 }
+
+@media (orientation: portrait) {
+  #projects_div {
+    margin-left: calc(100vw / 8);
+    margin-right: calc(100vw / 8);
+  }  
+}

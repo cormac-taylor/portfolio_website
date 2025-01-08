@@ -53,3 +53,10 @@
 span {
   font-style: italic;
 }
+
+@media (orientation: portrait) {
+  #experiences_div {
+    margin-left: calc(100vw / 8);
+    margin-right: calc(100vw / 8);
+  }
+}
