@@ -1,5 +1,5 @@
 import "./styles/RotatingGraph.css";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import ForceGraph3D from "react-force-graph-3d";
 import * as THREE from "three";
@@ -200,16 +200,16 @@ function RotatingGraph({ skillSubset, renderGraph }) {
   const [graphData, setGraphData] = useState(initGraphData);
 
   useEffect(() => {
-    if (graphRef.current) {
+    if (renderGraph) {
       graphRef.current.d3Force("link").distance(70); // Adjust link length
     }
-  }, [graphRef.current]);
+  }, [renderGraph]);
 
   // https://github.com/vasturiano/react-force-graph/blob/master/example/camera-auto-orbit/index.html
   const DISTANCE = 625;
   const SPEED = 0.002;
   useEffect(() => {
-    if (graphRef.current) {
+    if (renderGraph) {
       graphRef.current.cameraPosition({ z: DISTANCE });
 
       // camera orbit
@@ -222,28 +222,33 @@ function RotatingGraph({ skillSubset, renderGraph }) {
         angle += SPEED;
       }, 10);
     }
-  }, [graphRef.current]);
+  }, [renderGraph]);
+
+  const getGraphData = useCallback(() => {
+    return graphData;
+  }, [graphData]);
 
   useEffect(() => {
+    const data = getGraphData();
     if (skillSubset) {
-      const updatedNodes = graphData.nodes.map((node) => {
+      const updatedNodes = data.nodes.map((node) => {
         const color = SKILLS_SUBSETS[skillSubset].includes(node.id)
           ? "#3998fc"
           : "#efefef";
         node["color"] = color;
         return node;
       });
-      graphData["nodes"] = updatedNodes;
-      setGraphData(graphData);
+      data["nodes"] = updatedNodes;
+      setGraphData(data);
     } else {
-      const updatedNodes = graphData.nodes.map((node) => {
+      const updatedNodes = data.nodes.map((node) => {
         node["color"] = "#efefef";
         return node;
       });
-      graphData["nodes"] = updatedNodes;
-      setGraphData(graphData);
+      data["nodes"] = updatedNodes;
+      setGraphData(data);
     }
-  }, [skillSubset]);
+  }, [skillSubset, getGraphData]);
 
   // https://github.com/vasturiano/react-force-graph/blob/master/example/img-nodes/index.html
   const setNodeToImage = ({ id, color }) => {
