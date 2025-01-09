@@ -20,9 +20,7 @@
   #skills_div h2 {
     backdrop-filter: blur(4px);
     border-radius: 10px;
-    padding-left: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 10px 20px;
     border: 1px solid #efefef;
   }
 }
