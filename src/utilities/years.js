@@ -22,8 +22,7 @@ function getAge(date) {
 
 function getYears(date) {
   const years_ms = new Date().getTime() - new Date(date);
-  const years =
-    Math.floor(years_ms / (1000 * 60 * 60 * 24 * 365.24237));
+  const years = Math.floor(years_ms / (1000 * 60 * 60 * 24 * 365.24237));
   return NUM_STR[years];
 }
 

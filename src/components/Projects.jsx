@@ -22,7 +22,7 @@ function Projects({ setSkillSubset }) {
           title="Portfolio Website"
           date="January 2025"
           desc="You're admiring it right now! It's a collection of some of the best things I've made, so it's easy for you to parse."
-          youtube_url="https://www.youtube.com/@cormac-taylor"
+          youtube_url="https://youtu.be/2w1KS-3VzIU"
           github_url="https://github.com/cormac-taylor/personal_website"
         />
         <Project
@@ -144,7 +144,11 @@ function Project({
 }) {
   return (
     <>
-      <div className="project" onMouseOver={setToSubset} onMouseOut={resetSubset}>
+      <div
+        className="project"
+        onMouseOver={setToSubset}
+        onMouseOut={resetSubset}
+      >
         <div className="thumbnail">
           <img src={src} alt={alt} />
         </div>

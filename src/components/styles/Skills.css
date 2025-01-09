@@ -16,10 +16,8 @@
 }
 
 @media (orientation: portrait) {
-
   #skills_div {
     margin-left: 12.5vw;
     margin-right: 50vw;
-  }  
-  
+  }
 }

@@ -59,7 +59,6 @@
     width: 75vw;
     text-align: center;
     justify-content: center;
-
   }
 
   .animate_caret {
@@ -69,9 +68,8 @@
   .empty_title {
     border-left: none;
   }
-  
+
   .title {
     border-right: none;
   }
-  
 }

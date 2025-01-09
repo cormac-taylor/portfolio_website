@@ -30,10 +30,9 @@
 @media (orientation: portrait) {
   .external_link:hover .display_img {
     display: none;
-  }  
+  }
 
   .external_link {
     padding: 0.25em 0.5em;
   }
-  
 }

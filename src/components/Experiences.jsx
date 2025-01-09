@@ -66,7 +66,11 @@ function Experience({
 }) {
   return (
     <>
-      <div className="experience" onMouseOver={setToSubset} onMouseOut={resetSubset}>
+      <div
+        className="experience"
+        onMouseOver={setToSubset}
+        onMouseOut={resetSubset}
+      >
         <img src={company_logo} alt="Stevens Logo" />
         <h3>{title}</h3>
         <div className="experience_container">
