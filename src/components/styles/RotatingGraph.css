@@ -7,3 +7,10 @@
   top: 0;
   left: calc(500vw / 12);
 }
+
+@media (orientation: portrait) {
+  #skills_graph {
+    width: 100vw;
+    left: 0;
+  }  
+}

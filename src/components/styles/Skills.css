@@ -11,13 +11,18 @@
   font-size: 64px;
 }
 
-#skills_div p {
-  font-size: 20px;
-}
-
 @media (orientation: portrait) {
   #skills_div {
     margin-left: 12.5vw;
     margin-right: 50vw;
+  }
+
+  #skills_div h2 {
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #efefef;
   }
 }

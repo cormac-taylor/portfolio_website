@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import ForceGraph3D from "react-force-graph-3d";
 import * as THREE from "three";
 
-const VIEW_WIDTH = 7 / 12;
+const VIEW_WIDTH = window.innerWidth < window.innerHeight ? 1 : 7 / 12;
 const SKILLS_SUBSETS = {
   stevens: [],
   jostrong: ["react", "typescript", "css", "mongodb", "git"],
