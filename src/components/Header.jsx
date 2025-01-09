@@ -23,7 +23,7 @@ function Header() {
           <div className="nav_box right">
             <ExternalLink
               url="https://www.cormac-taylor.com/Cormac_Taylor_Resume.pdf"
-              txt="Resume"
+              txt="Résumé"
             />
             <ExternalLink
               url={`https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`}
