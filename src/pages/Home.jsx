@@ -38,7 +38,6 @@ function Home({ startTyping, setStartTyping }) {
         if (entry.isIntersecting) {
           setRenderGraph(true);
           observer.unobserve(entry.target);
-          console.log("unlocked");
         }
       },
       { threshold: 0.1 }
