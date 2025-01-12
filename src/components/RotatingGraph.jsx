@@ -6,20 +6,53 @@ import * as THREE from "three";
 
 const VIEW_WIDTH = window.innerWidth < window.innerHeight ? 1 : 7 / 12;
 const SKILLS_SUBSETS = {
-  stevens: [],
-  jostrong: ["react", "typescript", "css", "mongodb", "git"],
-  td: ["spring", "java"],
-  portfolio_website: ["react", "css", "javascript", "git"],
-  variable_neural_network: ["python", "jupyter", "pandas", "numpy"],
-  full_stack_web_app: ["html", "css", "javascript", "mongodb", "git"],
+  stevens: ["slack"],
+  jostrong: [
+    "nodejs",
+    "npm",
+    "react",
+    "reactrouter",
+    "typescript",
+    "materialui",
+    "css",
+    "mongodb",
+    "git",
+    "jira",
+    "vite",
+  ],
+  td: ["spring", "java", "junit", "confluence", "jira"],
+  portfolio_website: [
+    "nodejs",
+    "npm",
+    "react",
+    "css",
+    "javascript",
+    "git",
+    "vite",
+    "canva",
+  ],
+  variable_neural_network: ["python", "jupyter", "scikitlearn", "numpy"],
+  full_stack_web_app: [
+    "html",
+    "css",
+    "javascript",
+    "mongodb",
+    "git",
+    "nodejs",
+    "npm",
+    "axios",
+    "express",
+    "handlebars",
+    "markdown",
+  ],
   mini_chat_app: ["erlang"],
-  crud_api_server: ["javascript", "mongodb"],
+  crud_api_server: ["javascript", "mongodb", "nodejs", "npm"],
 };
 
 const web_dev = [
   {
-    source: "git",
-    target: "javascript",
+    source: "javascript",
+    target: "css",
   },
   {
     source: "javascript",
@@ -27,14 +60,6 @@ const web_dev = [
   },
   {
     source: "javascript",
-    target: "css",
-  },
-  {
-    source: "javascript",
-    target: "mongodb",
-  },
-  {
-    source: "react",
     target: "typescript",
   },
   {
@@ -42,50 +67,52 @@ const web_dev = [
     target: "react",
   },
   {
-    source: "html",
-    target: "css",
+    source: "javascript",
+    target: "nodejs",
   },
   {
-    source: "mongodb",
-    target: "postgresql",
+    source: "typescript",
+    target: "react",
+  },
+  {
+    source: "react",
+    target: "materialui",
+  },
+  {
+    source: "react",
+    target: "reactrouter",
+  },
+  {
+    source: "react",
+    target: "vite",
+  },
+  {
+    source: "nodejs",
+    target: "npm",
+  },
+  {
+    source: "npm",
+    target: "threejs",
+  },
+  {
+    source: "npm",
+    target: "express",
+  },
+  {
+    source: "npm",
+    target: "axios",
+  },
+  {
+    source: "npm",
+    target: "jquery",
+  },
+  {
+    source: "npm",
+    target: "handlebars",
   },
 ];
 
-const systems = [
-  {
-    source: "c",
-    target: "bash",
-  },
-  {
-    source: "c",
-    target: "cplusplus",
-  },
-  {
-    source: "c",
-    target: "debian",
-  },
-];
-
-const java_and_concurrency = [
-  {
-    source: "java",
-    target: "spring",
-  },
-  {
-    source: "java",
-    target: "groovy",
-  },
-  {
-    source: "groovy",
-    target: "erlang",
-  },
-  {
-    source: "erlang",
-    target: "ocaml",
-  },
-];
-
-const ml = [
+const machine_learning = [
   {
     source: "python",
     target: "jupyter",
@@ -98,16 +125,135 @@ const ml = [
     source: "jupyter",
     target: "numpy",
   },
+  {
+    source: "jupyter",
+    target: "scikitlearn",
+  },
+  {
+    source: "jupyter",
+    target: "matplotlib",
+  },
+];
+
+const functional = [
+  {
+    source: "ocaml",
+    target: "erlang",
+  },
+];
+
+const java = [
+  {
+    source: "java",
+    target: "groovy",
+  },
+  {
+    source: "java",
+    target: "spring",
+  },
+  {
+    source: "java",
+    target: "junit",
+  },
+  {
+    source: "java",
+    target: "maven",
+  },
+];
+
+const database = [
+  {
+    source: "aws",
+    target: "mongodb",
+  },
+  {
+    source: "aws",
+    target: "postgresql",
+  },
+];
+
+const tools = [
+  {
+    source: "chrome",
+    target: "canva",
+  },
+  {
+    source: "chrome",
+    target: "confluence",
+  },
+  {
+    source: "chrome",
+    target: "slack",
+  },
+  {
+    source: "chrome",
+    target: "jira",
+  },
+];
+
+const systems = [
+  {
+    source: "c",
+    target: "cplusplus",
+  },
+  {
+    source: "c",
+    target: "bash",
+  },
+  {
+    source: "c",
+    target: "unix",
+  },
+  {
+    source: "bash",
+    target: "homebrew",
+  },
+  {
+    source: "unix",
+    target: "debian",
+  },
+  {
+    source: "unix",
+    target: "ubuntu",
+  },
+  {
+    source: "unix",
+    target: "git",
+  },
+  {
+    source: "git",
+    target: "markdown",
+  },
 ];
 
 const initGraphData = {
   nodes: [
+    {
+      id: "aws",
+      color: "#efefef",
+    },
+    {
+      id: "axios",
+      color: "#efefef",
+    },
     {
       id: "bash",
       color: "#efefef",
     },
     {
       id: "c",
+      color: "#efefef",
+    },
+    {
+      id: "canva",
+      color: "#efefef",
+    },
+    {
+      id: "chrome",
+      color: "#efefef",
+    },
+    {
+      id: "confluence",
       color: "#efefef",
     },
     {
@@ -127,11 +273,23 @@ const initGraphData = {
       color: "#efefef",
     },
     {
+      id: "express",
+      color: "#efefef",
+    },
+    {
       id: "git",
       color: "#efefef",
     },
     {
       id: "groovy",
+      color: "#efefef",
+    },
+    {
+      id: "handlebars",
+      color: "#efefef",
+    },
+    {
+      id: "homebrew",
       color: "#efefef",
     },
     {
@@ -147,11 +305,47 @@ const initGraphData = {
       color: "#efefef",
     },
     {
+      id: "jira",
+      color: "#efefef",
+    },
+    {
+      id: "jquery",
+      color: "#efefef",
+    },
+    {
+      id: "junit",
+      color: "#efefef",
+    },
+    {
       id: "jupyter",
       color: "#efefef",
     },
     {
+      id: "markdown",
+      color: "#efefef",
+    },
+    {
+      id: "materialui",
+      color: "#efefef",
+    },
+    {
+      id: "matplotlib",
+      color: "#efefef",
+    },
+    {
+      id: "maven",
+      color: "#efefef",
+    },
+    {
       id: "mongodb",
+      color: "#efefef",
+    },
+    {
+      id: "nodejs",
+      color: "#efefef",
+    },
+    {
+      id: "npm",
       color: "#efefef",
     },
     {
@@ -179,15 +373,51 @@ const initGraphData = {
       color: "#efefef",
     },
     {
+      id: "reactrouter",
+      color: "#efefef",
+    },
+    {
+      id: "scikitlearn",
+      color: "#efefef",
+    },
+    {
+      id: "slack",
+      color: "#efefef",
+    },
+    {
       id: "spring",
+      color: "#efefef",
+    },
+    {
+      id: "threejs",
       color: "#efefef",
     },
     {
       id: "typescript",
       color: "#efefef",
     },
+    {
+      id: "ubuntu",
+      color: "#efefef",
+    },
+    {
+      id: "unix",
+      color: "#efefef",
+    },
+    {
+      id: "vite",
+      color: "#efefef",
+    },
   ],
-  links: [web_dev, systems, java_and_concurrency, ml].flat(),
+  links: [
+    web_dev,
+    machine_learning,
+    functional,
+    java,
+    database,
+    tools,
+    systems,
+  ].flat(),
 };
 
 RotatingGraph.propTypes = {
@@ -206,7 +436,7 @@ function RotatingGraph({ skillSubset, renderGraph }) {
   }, [renderGraph]);
 
   // https://github.com/vasturiano/react-force-graph/blob/master/example/camera-auto-orbit/index.html
-  const DISTANCE = 625;
+  const DISTANCE = 930;
   const SPEED = 0.002;
   useEffect(() => {
     if (renderGraph) {
