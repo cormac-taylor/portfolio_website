@@ -21,9 +21,10 @@
 }
 
 #portrait img {
-  max-width: calc(500vw / 12);
+  width: calc(500vw / 12);
   /* min-height: 85vh; */
-  /* max-height: 95vh; */
+  max-height: 95vh;
+  object-fit: contain;
 }
 
 .tub {
