@@ -21,8 +21,8 @@
 }
 
 #portrait img {
-  /* max-width: calc(500vw / 12); */
-  min-height: 90vh;
+  max-width: calc(500vw / 12);
+  /* min-height: 85vh; */
   /* max-height: 95vh; */
 }
 
