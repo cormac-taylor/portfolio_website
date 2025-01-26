@@ -17,7 +17,8 @@ function About() {
             <h2>{getYears(first_line)} years since my first line of code!</h2>
             <p>
               I&apos;m a computer science student with a strong foundation in
-              algorithms, machine learning, and web development.
+              software engineering, machine learning, and full-stack
+              development.
             </p>
             <p>
               Currently, I&apos;m an Algorithmic Complexity course assistant at

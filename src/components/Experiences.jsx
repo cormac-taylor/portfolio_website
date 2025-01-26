@@ -20,7 +20,7 @@ function Experiences({ setSkillSubset }) {
           title="Course Assistant"
           location="Hoboken, NJ"
           date="January 2024 - Present"
-          desc="Proctoring exams and grading assignments on theory topics like Turing Machines, computability, complexity, and reductions."
+          desc="Proctoring exams and grading assignments for PhDs on theory topics like automata, computability, and complexity."
         />
         <Experience
           setToSubset={() => setSkillSubset("jostrong")}
@@ -29,7 +29,7 @@ function Experiences({ setSkillSubset }) {
           title="Lead Developer"
           location="Hoboken, NJ"
           date="August 2024 - Present"
-          desc="Developing a full-stack CRM-style web app for a fitness coach to improve efficiency and automate processes."
+          desc="Developing a full-stack CRM-style web app for a local fitness coach to improve efficiency and automate processes."
         />
         <Experience
           setToSubset={() => setSkillSubset("td")}
