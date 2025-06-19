@@ -1,38 +1,56 @@
 /* ExternalLink.css */
 .external_link {
   color: #efefef;
-  padding: 0.5em 1em;
+  padding: 0.5em 0em 0.5em 1em; /* consistent padding */
   border-radius: 0.5em;
-  transition: background-color 0.25s ease;
-  position: relative;
+  transition: background-color 0.25s ease, color 0.25s ease, gap 0.25s ease, padding-right 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 0;
+  overflow: hidden;
+  text-decoration: none;
 }
 
 .external_link:hover {
   color: #101010;
   background-color: #efefef;
+  gap: 0.4em;
+  padding-right: 1em;
   text-decoration: none;
 }
 
 .display_img {
-  display: none;
+  opacity: 0;
+  transform: scale(0.8) translateX(0.2em);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  display: inline-flex;
+  align-items: center;
 }
 
 .external_link:hover .display_img {
-  display: inline;
+  opacity: 1;
+  transform: scale(1) translateX(0);
 }
 
 .new_tab_icon {
+  max-width: 0.9em;
+  height: auto;
   vertical-align: middle;
-  padding-left: 0.5em;
-  max-width: 0.8em;
 }
 
 @media (orientation: portrait) {
-  .external_link:hover .display_img {
-    display: none;
-  }
-
   .external_link {
     padding: 0.25em 0.5em;
+  }
+
+  .external_link:hover {
+  gap: 0em;
+  padding-right: 0.5em;
+}
+
+  .display_img {
+    display: none;
   }
 }
